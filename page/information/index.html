@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Information</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: Pirulen;
+            src: url(font/pirulen.ttf);
+        }
+
+        body {
+            background: url(img/information/bg.png) no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .button {
+            background: url(img/information/button/Button.png) no-repeat center center ;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 145px;
+            width: 325px;
+        }
+
+        .button:hover {
+            background: url(img/information/button/ButtonHover.png) no-repeat center center;
+            
+        }
+
+        .button-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .img {
+            cursor: pointer;            
+        }
+
+    </style>    
+</head>
+<body>
+
+    <audio id="bgm" autoplay loop>
+        <source src="audio/bgm.mp3" type="audio/mp3" >
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="voice-over" autoplay>
+        <source src="audio/voice_over.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="row">
+        <div class="col-6 button-center">
+            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" style="width: 40%;" />
+            <img class="img" src="img/information/button/ElectionText.png" style="position: absolute; width: 15%;">
+        </div>
+        <div class="col-6 button-center">
+            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" style="width: 40%;" />
+            <img class="img" src="img/information/button/PreTestText.png" style="position: absolute; width: 15%;">
+        </div>
+    </div>
+    
+
+    <div class="row">
+        <div class="col-6 button-center">
+            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" style="width: 40%;" />
+            <img class="img" src="img/information/button/EvaluationText.png" style="position: absolute; width: 15%;"> 
+        </div>
+        <div class="col-6 button-center">
+            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" style="width: 40%;" />
+            <img class="img" src="img/information/button/CertificateText.png" style="position: absolute; width: 15%;"> 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 button-center">
+            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" style="width: 40%;" />
+            <img class="img" src="img/information/button/MembershipText.png" style="position: absolute; width: 15%;"> 
+        </div>
+        <div class="col-6 button-center">
+            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" style="width: 40%;" />
+            <img class="img" src="img/information/button/SouvenirText.png" style="position: absolute; width: 13%;"> 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 button-center">
+        </div>
+        <div class="col-6 button-center">
+            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" style="width: 40%;" />
+            <img class="img" src="img/information/button/ExitText.png" style="position: absolute; width: 7%;"> 
+        </div>
+    </div>
+
+    <script>
+        function hover(element) {
+            element.setAttribute('src', 'img/information/button/ButtonHover.png');
+        }
+
+        function unhover(element) {
+            element.setAttribute('src', 'img/information/button/Button.png');
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        var ctr = 0;
+        var bgm = document.getElementById("bgm");
+        bgm.volume = 0.1;
+
+        var voiceOver = document.getElementById("voice-over");
+        voiceOver.volume = 1;
+
+        setInterval(function(){ bgm.play(); }, 10);
+        setInterval(function(){ 
+            if (ctr < 100) {
+                voiceOver.play(); 
+                ctr++;
+            }
+        }, 10);
+    </script>
+</body>
+</html>

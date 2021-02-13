@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Evaluation</title>
+
+  <style>
+    @font-face {
+      font-family: Pirulen;
+      src: url(../font/pirulen.ttf);
+    }
+
+    body {
+      background-color: #c6eafa;
+    }
+
+    .form-control {
+      border: 2px solid #000;
+      border-radius: 0;
+    }
+
+    .form-check-input {
+      border: 2px solid #000;
+    }
+
+    .custom-input {
+      border: 0;
+      border-bottom: 2px solid #000;
+      background-color: rgba(0, 0, 0, 0);
+      font-size: 10px;
+    }
+
+    .form-check-input[type=radio] {
+      border-radius: 0;
+    }
+
+    .header {
+      padding: 5px;
+      background-color: #013874;
+      color: white;
+    }
+
+    hr {
+      margin: 5px;
+    }
+
+    .selection {
+      padding: 0px 10px;
+      width: 20%;
+      text-align: center;
+      display: inline;
+    }
+
+    .buttons {
+      font-size: 24px;
+      font-family: Pirulen;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="row">
+    <div class="col-12 text-center mb-4">
+      <div class="row">
+        <div class="col-12">
+          <label style="font-size: 24px; font-weight: bold;">NUTRITIONIST-DIETITIANS’ ASSOCIATION OF THE
+            PHILIPPINES</label>
+        </div>
+        <div class="col-12">
+          <label style="font-size: 24px; font-weight: bold;">66th Virtual Annual Convention</label>
+        </div>
+        <div class="col-12">
+          <label style="font-size: 16px">“The Power of Nutrition: Today and Beyond”</label>
+        </div>
+        <div class="col-12">
+          <label style="font-size: 16px">20-27 February 2021</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 text-center"
+      style="padding: 5px; width: 100%; background-color: #013874; color: white; font-family: Pirulen;">
+      <label style="font-size: 28px;">
+        EVALUATION FORM
+      </label>
+    </div>
+
+    <div class="col-12 text-center mt-3">
+      <label style="font-size: 18px;">
+        Complete and send this form in exchange <br /> for your Certifcate of Participations
+      </label>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="on-topics">
+    </div>
+
+    <div class="management">
+    </div>
+
+    <div class="attendance">
+    </div>
+
+    
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+  </script>
+
+
+  <script>
+    $(".on-topics").load("on_topics.html");
+    $(".management").load("convention_management.html");
+    $(".attendance").load("attendance.html");
+  </script>
+
+  <script>
+
+    function nextPage(page) {
+      if (page == 1) {
+        document.getElementById("page-1").style.display = "inline";
+        document.getElementById("page-2").style.display = "none";
+        document.getElementById("page-3").style.display = "none";
+        document.getElementById("page-4").style.display = "none";
+      } else if (page == 2) {
+        document.getElementById("page-1").style.display = "none";
+        document.getElementById("page-2").style.display = "inline";
+        document.getElementById("page-3").style.display = "none";
+        document.getElementById("page-4").style.display = "none";
+      } else if (page == 3) {
+        document.getElementById("page-1").style.display = "none";
+        document.getElementById("page-2").style.display = "none";
+        document.getElementById("page-3").style.display = "inline";
+        document.getElementById("page-4").style.display = "none";
+      } else if (page == 4) {
+        document.getElementById("page-1").style.display = "none";
+        document.getElementById("page-2").style.display = "none";
+        document.getElementById("page-3").style.display = "none";
+        document.getElementById("page-4").style.display = "inline";
+      }
+    }
+
+
+    function prevPage(page) {
+      if (page == 1) {
+        document.getElementById("page-1").style.display = "inline";
+        document.getElementById("page-2").style.display = "none";
+        document.getElementById("page-3").style.display = "none";
+        document.getElementById("page-4").style.display = "none";
+      } else if (page == 2) {
+        document.getElementById("page-1").style.display = "none";
+        document.getElementById("page-2").style.display = "inline";
+        document.getElementById("page-3").style.display = "none";
+        document.getElementById("page-4").style.display = "none";
+      } else if (page == 3) {
+        document.getElementById("page-1").style.display = "none";
+        document.getElementById("page-2").style.display = "none";
+        document.getElementById("page-3").style.display = "inline";
+        document.getElementById("page-4").style.display = "none";
+      } else if (page == 4) {
+        document.getElementById("page-1").style.display = "none";
+        document.getElementById("page-2").style.display = "none";
+        document.getElementById("page-3").style.display = "none";
+        document.getElementById("page-4").style.display = "inline";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

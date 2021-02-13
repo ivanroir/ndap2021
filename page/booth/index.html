@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Booth Exhibit</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: Pirulen;
+            src: url(font/pirulen.ttf);
+        }
+        
+        body {
+            background-image: url("img/booth/bg.png");
+            background-repeat: no-repeat;
+            background-size: cover; 
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .overlay {
+            position: absolute; 
+            bottom: 50px;
+            left: 0;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <audio id="bgm" autoplay loop>
+        <source src="audio/bgm.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <audio id="voice-over" autoplay>
+        <source src="audio/voice_over.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="row" style="height: 100%; padding: 0; margin: 0">
+        <div class="col-2" style="position: relative; padding: 0px;">
+            <img class="img-fluid"src="img/booth/banner.png" style="height: 100%; width: 100%;" /> 
+            <div class="overlay">
+                <div class="row">
+                    <div class="col-6 p-1 text-end">
+                        <button class="btn" onclick="next()"><img class="img-fluid" src="img/booth/home.png" /></button>
+                    </div>
+                    <div class="col-6 p-1 text-start">
+                        <button class="btn" onclick="next()"><img class="img-fluid" src="img/booth/next.png" /></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-10 " style="display: flex">
+            <div class="row">
+                <div id="first" class="col-12" >
+                    <div class="row" style="height: 90%; align-items: center; ">
+                        <div class="col-12 text-center" style="padding-bottom: 10px;">
+                            <a href="https://abbottnutri.com.ph/"><img class="img-fluid" src="img/booth/AbbottBooth.png" style="width: 60%;" /></a>
+                        </div>
+                        <div class="col-12 text-center" style="padding-bottom: 10px;">
+                            <a href="https://ndap2021.online/page/booth/ajinomoto/"><img class="img-fluid" src="img/booth/AjinomotoBooth.png" style="width: 60%;" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div id="second" class="col-12" style="display: none;">
+                    <div class="row" style="height: 100%; padding: 20px; align-items: center; ">
+                        <div class="col-6 text-end">
+                            <img src="img/booth/basic.png" style="width: 55%;"  />
+                        </div>
+                        <div class="col-6 text-start">
+                            <img src="img/booth/basic.png" style="width: 55%;" />
+                        </div>
+                        <div class="col-6 text-center">
+                            <img src="img/booth/basic.png" style="width: 55%;" />
+                        </div>
+                        <div class="col-6 text-center">
+                            <img src="img/booth/basic.png" style="width: 55%;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function next() {
+            if(document.getElementById("first").style.display == "none") {
+                document.getElementById("first").style.display = "block";
+                document.getElementById("second").style.display = "none";
+            }
+            else {
+                document.getElementById("first").style.display = "none";
+                document.getElementById("second").style.display = "block";
+            }
+        }
+    </script>
+
+    <script>
+        var ctr = 0;
+        var bgm = document.getElementById("bgm");
+        bgm.volume = 0.1;
+
+        var voiceOver = document.getElementById("voice-over");
+        voiceOver.volume = 1;
+        
+        setInterval(function(){ bgm.play(); }, 10);
+        setInterval(function(){ 
+            if (ctr < 100) {
+                voiceOver.play(); 
+                ctr++;
+            }
+        }, 10);
+    </script>
+
+</body>
+</html>

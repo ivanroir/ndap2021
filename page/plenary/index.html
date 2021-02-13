@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Plenary Intro</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: Pirulen;
+            src: url(font/pirulen.ttf);
+        }
+
+        body {
+            background-image: url("img/plenary/bg.png");
+            background-repeat: no-repeat;
+            background-size: cover; 
+            height: 100vh;
+            overflow: hidden;
+        }
+        .row {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        .sched-title {
+            color: yellow;
+        }
+
+        .sched-time {
+            color: white;
+        }
+
+        .sched-label {
+            color: white;
+        }
+    </style>    
+</head>
+<body>
+    <div id="portrait" style="display: flex; align-items: center; justify-content: center; height:100%; width: 100%; color: white">
+        <h1>PLEASE USE LANDSCAPE</h1>
+    </div>
+    <div class="row" id="landscape" style="height: 100vh;">
+        <div class="col-3" style="border: 1px solid white; padding: 0px;">
+            <div class="row">
+                <div style="height: 85vh; padding-top: 30px;">
+                    <div class="col-12 text-center" style="height: 37vh; align-items: center; display: flex; justify-content: center;">
+                        <img src="img/plenary/icon.png" style="width: 70%;" />
+                    </div>
+                    <div class="col-12 text-center" style="height: 25vh;">
+                        <a href = "https://ndap2021.online/page/watch1.html">
+                            <button class="btn">
+                                <img src="img/plenary/enter.png" style="width: 70%;" />
+                            </button>
+                        </a>
+                    </div>
+                    <div class="col-12 text-center" style="height: 30vh;">
+                        <button class="btn">
+                            <img src="img/plenary/exit.png" style="width: 50%;" />
+                        </button>
+                    </div>
+                </div>
+                <div class="col-12 text-center" style="height: 15vh; padding: 10px; border-top: 2px solid white;" >
+                    <label id="time" style="font-family: Pirulen; font-size: 2vw; color: white"></label>
+                </div>
+            </div>
+        </div>
+        <div class="col-9" style="border: 1px solid white; padding-left: 0px; padding-right: 0px; padding: 0px;">
+            <div class="row" style="height: 100%;" >
+                <div style="height: 85vh; padding: 0px;" >
+                    <div class="col-12" style="border: 1px solid white; padding-bottom: 10px; padding-top: 50px">
+                        <div class="row">
+                            <div class="col-8" >
+                                <h1 style="font-size: 2.5vw; color: #14ce26; font-family: Pirulen; padding-left: 20px;">PLENARY SCHEDULE</h1>
+                            </div>
+                            <div class="col-4">
+                                <h5 id="date" style="font-size: 1.3vw; color: white; font-family: Pirulen;"></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12" style="color: white; height: 100%; background-color: rgba(0, 0, 0, 0.8); padding-top: 30px;">
+                        <div class="overflow-auto" style="position: absolute; padding-left: 100px; height: 60%; width: 75%;" >
+                            <div class="row" id="sched"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center" style="height: 15vh; padding: 10px; border-top: 2px solid white; background-color: rgba(0, 0, 0, 1); z-index: 1;" >
+                    <div class="col-12">
+                        <div class="row" style="align-items: center;">
+                            <div class="col-3">
+                                <img src="img/plenary/sponsors/Nestle.png" style="width: 30%;" />
+                            </div>
+                            <div class="col-3" >
+                                <img src="img/plenary/sponsors/Abbott.png" style="width: 70%;" />
+                            </div>
+                            <div class="col-3">
+                                <img src="img/plenary/sponsors/Ajinomoto.png" style="width: 50%;" />
+                            </div>
+                            <div class="col-3">
+                                <img src="img/plenary/sponsors/Kalbe.png" style="width: 70%;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        var text = "", i = 0, j = 0, k = 0;
+
+        var schedule = [{
+            "schedTitle": "<label style='color: #14ce26; font-size: 24px'>February 20, 2021</label>",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "<label style='color: white'>9:00-12:00</label>",
+            "schedTime": ["<label style='color: yellow; font-weight: bold'>Nutrition and Dietetics in the Digital World</label", "<label style='color: yellow'>The Dietitians at the Forefront of the Health Care System</label>", "<label style='color: yellow'>Designing a Non Face to Face Nutrition Assessment</label>", "<label style='color: yellow'>Challenges in COVID: Weight Management</label>"],
+            "schedLabel":  ["<b>Moderator:</b> <br /> Dr Varsha Tavardy <br /> International Affiliate of the Academy <br /> of Nutrition and Dietetics (IAAND) <br /> <br />", "Monique Richards MS, RDN,LDN <br /> Owner, Dietitian-Nutritionist@ <br /> Nutrition -In-Sight <br /> <br />", "Esther Myers,RD, Ph.D,FAND <br /> CEO EF Myers Consulting Inc. <br /> President of SpectraWell <br /> <br /> ", "Melinda Boyd,DCN,MPH,MHR,RD <br /> Nutrition Consultant and Registered <br /> <br /> "] 
+        }, {
+            "schedTitle": "<hr style='padding: 5px; color: white' />",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "<label style='color: #14ce26; font-size: 24px'>February 25, 2021</label>",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        },  {
+            "schedTitle": "HOLY MASS (via Zoom)",
+            "schedTime":  ["7:00-8:00 AM"],
+            "schedLabel":  ["<b>Rev. Fr. Ajerico Orbos, SVD</b> <br/ >Christ the King Seminary"]
+        }, {
+            "schedTitle": "OPENING CEREMONIES<br />KEYNOTE SPEAKER",
+            "schedTime":  ["8:10-8:55 AM"],
+            "schedLabel":  ["<b>Patricia Babjak, MILS</b><br />CEO, Academy of Nutrition and Dietetics"]
+        }, {
+            "schedTitle": "<label style='color: #14ce26; font-size: 20px'>DAY 1 AM SESSION</label>",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "Dietic Leadership Amidst the Crisis",
+            "schedTime": ["9:00-9:30 AM"],
+            "schedLabel":  ["<b>Judith Rodriquez, Ph.D,RDn,FAND,FADA,LD/N</b><br />Board Director, International Confederation of Dietetic Association (ICDA)"]
+        }, {
+            "schedTitle": "Nutrition Where All Experts Agree: A Starting Point for a Healthy Diet",
+            "schedTime":  ["9:30-10:00 AM"],
+            "schedLabel":  ["Jim Painter Ph.D,RDN<br />Professor of Nutrition, Eastern Illinois University"]
+        }, {
+            "schedTitle": "",
+            "schedTime":  ["10:00-10:15 AM"],
+            "schedLabel":  ["Q and A<br />AWARDING"]
+        }, {
+            "schedTitle": "INDUSTRY SPONSORED: Strength and Immunity in the New Reality<br />ABBOTT PHILS",
+            "schedTime":  ["10:30-11:30 AM"],
+            "schedLabel":  ["<b>Dr. Cristy Redondo- Samin,RND,MD</b>"]
+        
+        }, {
+            "schedTitle": "",
+            "schedTime":  ["11:30-11:32 AM"],
+            "schedLabel":  ["CHAIR EXERCISES"]
+        
+        }, {
+            "schedTitle": "",
+            "schedTime":  ["11:32-2:00 PM"],
+            "schedLabel":  ["BREAK"]
+        
+        }, {
+            "schedTitle": "<label style='color: #14ce26; font-size: 20px'><br />DAY 1 PM SESSION</label>",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "The Effects of VCO Among Probable and suspect cases of Covid 19",
+            "schedTime":  ["2:00-2:30 PM"],
+            "schedLabel":  ["<b>Imelda A. Agdeppa, RND, PhD</b><br />Director, FNRI-DOST"]
+        
+        }, {
+            "schedTitle": "Low Fodmap Meal Planning",
+            "schedTime":  ["2:35-3:05 PM"],
+            "schedLabel":  ["Patsy Catsos, MS, RDN, LD"]
+        
+        }, {
+            "schedTitle": "Climate Change in the ASEAN and It's Impact on Food Security",
+            "schedTime":  ["3:10-3:40 PM"],
+            "schedLabel":  ["<b>Dr. Chwang Leh-Chii</b><br />President, Asian Federation of Dietetic Association "]
+        
+        }, {
+            "schedTitle": "",
+            "schedTime":  ["3:40-4:00 PM"],
+            "schedLabel":  ["Q and A<br />AWARDING"]
+        }, {
+            "schedTitle": "<hr style='padding: 5px; color: white' />",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "<label style='color: #14ce26; font-size: 24px'>February 26, 2021</label>",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "STRETCHING EXERCISES",
+            "schedTime":  ["8:10-8:15 AM"],
+            "schedLabel":  [""]
+        
+        }, {
+            "schedTitle": "KEYNOTE SPEAKER",
+            "schedTime":  ["8:20-8:50 AM"],
+            "schedLabel":  ["<b>Hon. Fortunato T. de la Peña</b><br />Secretary, DOST"]
+        
+        }, {
+            "schedTitle": "INDUSTRY SPONSORED: Maggi Sarap Sustansya Cooking Demo",
+            "schedTime":  ["9:00-9:20 AM "],
+            "schedLabel":  ["<b>Mayette Bumanlag, RND and Chef Eric Magtanong</b><br />Senior Science Research Specialist, FNRI"]
+        
+        }, {
+            "schedTitle": "<label style='color: #14ce26; font-size: 20px'>DAY 2 AM SESSION</label>",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "ASEAN Challenge: Who’s afraid of the Pandemic?",
+            "schedTime":  ["9:25-9:55 AM "],
+            "schedLabel":  ["<b>Michelle Cordero- Garcia,CIHRM</b> <br />Regional Director, HR (Asia-Pacific)"]
+        
+        }, {
+            "schedTitle": "Nutrient Profiling",
+            "schedTime":  ["10:00-10:30 AM"],
+            "schedLabel":  ["<b>Dr. Adam Drewnowski</b><br />Professor and Director, Center for Public Health Nutrition, University of Washington"]
+        
+        }, {
+            "schedTitle": "Diversifying Dietetics: Meeting the Challenge to thrive",
+            "schedTime":  ["10:35-11:05 AM"],
+            "schedLabel":  ["<b>Alda L.Menhennet ,RND,RDN</b><br />UFANDA Vice President, Director WIC Program Union City"]
+        
+        }, {
+            "schedTitle": "",
+            "schedTime":  ["11:05-11:20 AM"],
+            "schedLabel":  ["Q and A<br />AWARDING"]
+        
+        }, {
+            "schedTitle": "INDUSTRY SPONSORED: MSG aids in Sodium Reduction",
+            "schedTime":  ["11:25- 12:25 PM"],
+            "schedLabel":  ["<b>Dr. Ana San Gabriel,MD</b><br />Associate General Manager , Science Communications Group, Ajinomoto Tokyo"]
+        
+        }, {
+            "schedTitle": "<label style='color: #14ce26; font-size: 20px'>DAY 2 PM SESSION</label>",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "<label style='color: white; font-size: 18px;'>BREAKOUT ROOMS<br />ROOM 1</label>",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "INTRODUCTION",
+            "schedTime":  ["1:00-1:05 PM"],
+            "schedLabel":  [""]
+        
+        }, {
+            "schedTitle": "Nutrition Intervention in Emergencies",
+            "schedTime":  ["1:05-1:35 PM"],
+            "schedLabel":  ["<b>Dr. Martin Parreno</b><br />National Program Officer (Nutrition), UN Worlk Food Programme,Philippines "]
+        
+        }, {
+            "schedTitle": "Disruptions in the Food Systems Amidst Covid 19",
+            "schedTime":  ["1:35-2:05 PM"],
+            "schedLabel":  ["<b>Howard Bouis Ph.D</b><br />Former Director- Harvest Plus, Ambassador -at-Large"]
+        
+        }, {
+            "schedTitle": "Inter-AGency Task Force: Zero Hunger",
+            "schedTime":  ["2:05-2:35 PM"],
+            "schedLabel":  ["<b>Azucena Dayanghirang MD,MCH,CESE</b><br />Executive Director, National Nutrition Council"]
+        
+        }, {
+            "schedTitle": "",
+            "schedTime":  ["2:35-3:00 PM"],
+            "schedLabel":  ["Q and A and Awarding"]
+        
+        }, {
+            "schedTitle": "<label style='color: white; font-size: 18px; padding-top: 30px'>ROOM 2</label>",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "INTRODUCTION",
+            "schedTime":  ["1:00-1:05 PM"],
+            "schedLabel":  [""]
+        
+        }, {
+            "schedTitle": "Review of Common Nutrition Myths and Food Trends",
+            "schedTime":  ["1:05-1:35 PM"],
+            "schedLabel":  ["<b>Deanna Minich, MS,PD, FACN,IFMCP</b><br />Fellow, American College of Nutrition "]
+        
+        }, {
+            "schedTitle": "Popular Proprietary Diets and Athletic Performance ",
+            "schedTime":  ["1:35-2:05 PM"],
+            "schedLabel":  ["<b>Nancy Clark, MS, RD, CSSD</b>"]
+        
+        }, {
+            "schedTitle": "The Role of Gut Microbiome in Sports Performance",
+            "schedTime":  ["2:05-2:35 PM"],
+            "schedLabel":  ["Douglas Kalman, PhD, RD, CCRC,FACN,FISSN"]
+
+        }, {
+            "schedTitle": "",
+            "schedTime":  ["2:35-3:00 PM"],
+            "schedLabel":  ["Q and A and Awarding"]
+        
+        }, {
+            "schedTitle": "<label style='color: white; font-size: 18px; padding-top: 30px'>ROOM 3</label>",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "INTRODUCTION",
+            "schedTime":  ["1:00-1:05 PM"],
+            "schedLabel":  [""]
+        
+        }, {
+            "schedTitle": "Challenges in Nutrition Support in the Global Pandemic and Beyond",
+            "schedTime":  ["1:05-1:35 PM"],
+            "schedLabel":  ["<b>Ainsley Malone, RDN,CNSC </b><br />Nutrition Support Specialist  A.S.P.E.N."]
+        
+        }, {
+            "schedTitle": "Does it matter: Standard Enteral Formula or Disease Specific FormulaFormula in Global Pandemic ",
+            "schedTime":  ["1:35-2:05 PM"],
+            "schedLabel":  ["<b>Bhubaneswari Shankar </b>"]
+        
+        }, {
+            "schedTitle": "Decoding Phosphate in the Dialysis Diet - Achieving Better Phosphate control thru Patient Education",
+            "schedTime":  ["2:05-2:35 PM"],
+            "schedLabel":  ["<b>Tilakavati  Karupaiah </b>"]
+        
+        }, {
+            "schedTitle": "",
+            "schedTime":  ["2:35-3:00 PM"],
+            "schedLabel":  ["Q and A and Awarding"]
+        
+        }, {
+            "schedTitle": "<label style='color: white; font-size: 18px; padding-top: 30px'>ROOM 4</label>",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "INTRODUCTION",
+            "schedTime":  ["1:00-1:05 PM"],
+            "schedLabel":  [""]
+        
+        }, {
+            "schedTitle": "Re- Imaging the Food Industry within the context of Nutrition Enterpreneurship ",
+            "schedTime":  ["1:05-1:35 PM"],
+            "schedLabel":  ["<b>Ariestelo Asilo RND, MBM</b><br />Co- Founder & COO Varacco Inc., Timplado Internationl Corporation"]
+        
+        }, {
+            "schedTitle": "Food,Beverage,and Hospitality Establishment: Pushing forward amidst the Challenges of Pandemic ",
+            "schedTime":  ["1:35-2:05 PM"],
+            "schedLabel":  ["<b>Jose Amadeo Jimenez</b><br />Owner, Tito Chef Reastaurant"]
+        
+        }, {
+            "schedTitle": "Meal Solutions: Cooking and Eating During the Pandemic",
+            "schedTime":  ["2:05-2:35 PM"],
+            "schedLabel":  ["Sylvia Klinger"]
+        
+        }, {
+            "schedTitle": "",
+            "schedTime":  ["2:35-3:00 PM"],
+            "schedLabel":  ["Q and A and Awarding"]
+        
+        }, {
+            "schedTitle": "<br /><label style='color: white; font-size: 18px; padding-top: 30px'>MAIN SESSION</label>",
+            "schedTime":  [""],
+            "schedLabel":  [""]
+        
+        }, {
+            "schedTitle": "Awake the Giant Within",
+            "schedTime":  ["3:05 - 3:35 PM"],
+            "schedLabel":  ["<b>Tony Robbins</b> <br />Motivational Speaker and Life Coach "]
+        
+        }, {
+            "schedTitle": "",
+            "schedTime":  ["3:40-4:20 PM"],
+            "schedLabel":  ["<b>Business Meeting</b><br />President's Report<br />Treasurer's Report"]
+        
+        }, {
+            "schedTitle": "",
+            "schedTime":  ["4:30-5:00 PM"],
+            "schedLabel":  ["CLOSING CEREMONIES: HEAL AS ONE AVP<br />RAFFLE CLOSING REMARKS"]
+        
+        }, {
+            "schedTitle": "<hr style='padding: 5px; color: white' />",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "<label style='color: #14ce26; font-size: 24px'>February 27, 2021</label>",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "<label style='color: white; font-size: 18px;'>BREAKOUT ROOMS<br />ROOM 1</label>",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "INTRODUCTION",
+            "schedTime":  ["9:00-9:05 AM"],
+            "schedLabel":  [""]
+        
+        }, {
+            "schedTitle": "Introduction to Integrative and Functional Medicine: Curious minds want to know",
+            "schedTime":  ["9:05-9:35 AM"],
+            "schedLabel":  ["<b>Sheena Dean</b><br />Founder, Integrative and Functional Nutrition Academy "]
+        
+        }, {
+            "schedTitle": "Emotional Detox",
+            "schedTime":  ["9:40-10:10 AM"],
+            "schedLabel":  ["<b>Richard Tamayo MD</b>"]
+        
+        }, {
+            "schedTitle": "Sleep Medicine for ND's ",
+            "schedTime":  ["10:15-10:45 AM"],
+            "schedLabel":  ["<b>Blecenda  Varona ,RND,Ph.D</b> <br />Founder, Asian Institute of Lifestyle Medicine"]
+        
+        }, {
+            "schedTitle": "",
+            "schedTime":  ["10:45-11:00 AM"],
+            "schedLabel":  ["Q and A and Awarding"]
+        
+        }, {
+            "schedTitle": "<label style='color: white; font-size: 18px; padding-top: 30px'>ROOM 2</label>",
+            "schedTime": [""],
+            "schedLabel":  [""] 
+        }, {
+            "schedTitle": "INTRODUCTION",
+            "schedTime":  ["9:00-9:05 AM"],
+            "schedLabel":  [""]
+        
+        }, {
+            "schedTitle": "The Future of Diabetes Education:Opportunities and Evolving Roles of Trained Diabetes Educators",
+            "schedTime":  ["9:05-9:35 AM"],
+            "schedLabel":  ["<b>Constance Brown Riggs, MSEd,RD,CDE,CDN</b>"]
+        
+        }, {
+            "schedTitle": "New Directiond for Diabetes Prevention and Management in Relation to Nutrition ",
+            "schedTime":  ["9:40-10:10 AM"],
+            "schedLabel":  ["<b>Grace De Los  Santos </b>"]
+        
+        }, {
+            "schedTitle": "New Technologies and Devices: Trends in Diabetes Care",
+            "schedTime":  ["10:15-10:45 AM"],
+            "schedLabel":  ["<b>Leyden Florido TN</b>"]
+        
+        }, {
+            "schedTitle": "",
+            "schedTime":  ["10:45-11:00 AM"],
+            "schedLabel":  ["Q and A and Awarding"]
+        
+        }]
+
+        for (i in schedule) {
+            text += "<div class='col-12'>";
+                text += "<div class='sched-title'>";
+                    text += "<label style='width: 100%; padding-top: 5px'>" + schedule[i].schedTitle + "</label>";
+                text += "</div>";
+            text += "</div>";
+            
+            for (j in schedule[i].schedTime) {
+                text += "<div class='col-4'>";
+                    text += "<div class='sched-time'>";
+                        text += "<label>" + schedule[i].schedTime[j] + "</label>";
+                    text += "</div>";
+                text += "</div>";
+
+                text += "<div class='col-8'>";
+                    text += "<div class='sched-label'>";
+                        text += "<label>" + schedule[i].schedLabel[j] + "</label>";
+                    text += "</div>";
+                text += "</div>";
+            }
+        }
+
+        document.getElementById('sched').innerHTML = text;
+
+    </script>
+    <script>
+        if(screen.availHeight > screen.availWidth){
+            document.getElementById('landscape').style.display = "none";
+            document.getElementById('portrait').style.display = "flex";            
+        }
+        else if(screen.availHeight < screen.availWidth){
+            document.getElementById('landscape').style.display = "flex";
+            document.getElementById('portrait').style.display = "none";            
+        }
+        window.addEventListener("orientationchange", function() {
+            // Announce the new orientation number
+            if(screen.availHeight > screen.availWidth){
+                document.getElementById('landscape').style.display = "none";
+                document.getElementById('portrait').style.display = "flex";                
+            }
+            else if(screen.availHeight < screen.availWidth){
+                document.getElementById('landscape').style.display = "flex";
+                document.getElementById('portrait').style.display = "none";                
+            }
+
+        }, false);
+    </script>
+    <script>
+
+        var timeElement = document.getElementById('time');
+        var dateElement = document.getElementById('date');
+
+        function clock() {
+            var hour = new Date().getHours().toString();
+            var minute = (new Date().getMinutes().toString() < 10? '0' : '') + new Date().getMinutes().toString(); 
+            var second = new Date().getSeconds().toString();
+
+            var month = new Array();
+            month[0] = "January";
+            month[1] = "February";
+            month[2] = "March";
+            month[3] = "April";
+            month[4] = "May";
+            month[5] = "June";
+            month[6] = "July";
+            month[7] = "August";
+            month[8] = "September";
+            month[9] = "October";
+            month[10] = "November";
+            month[11] = "December";
+            var date = new Date();
+            var monthName = month[date.getMonth()];
+            var day = new Date().getDate().toString();
+            var year = new Date().getFullYear().toString();
+
+            var ampm = "";
+
+            if(hour > 12) {
+                hour = hour - 12;
+                ampm = "pm";
+            }
+            else if (hour == 0) { 
+                hour = 12;
+                ampm = "am";
+            }
+            else if(hour < 12) {
+                ampm = "am";
+            }
+            else if(hour == 12) {
+                ampm = "pm";
+            }
+
+            timeElement.textContent = hour + ":" + minute + ampm; 
+            dateElement.textContent = monthName + " " + day + ", " + year
+        }
+        setInterval(clock, 500);
+
+    </script>
+    
+</body>
+</html>
