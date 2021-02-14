@@ -41,8 +41,11 @@
         <source src="audio/voice_over.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+    <div id="portrait" style="display: flex; align-items: center; justify-content: center; height:100%; width: 100%; color: white">
+        <h1>PLEASE USE LANDSCAPE</h1>
+    </div>  
 
-    <div class="row" style="height: 100%; padding: 0; margin: 0">
+    <div class="row" id="landscape" style="height: 100%; padding: 0; margin: 0">
         <div class="col-2" style="position: relative; padding: 0px;">
             <img class="img-fluid"src="img/booth/banner.png" style="height: 100%; width: 100%;" /> 
             <div class="overlay">
@@ -119,6 +122,29 @@
                 ctr++;
             }
         }, 10);
+    </script>
+
+    <script>
+        if(screen.availHeight > screen.availWidth){
+            document.getElementById('landscape').style.display = "none";
+            document.getElementById('portrait').style.display = "flex";            
+        }
+        else if(screen.availHeight < screen.availWidth){
+            document.getElementById('landscape').style.display = "flex";
+            document.getElementById('portrait').style.display = "none";            
+        }
+        window.addEventListener("orientationchange", function() {
+            // Announce the new orientation number
+            if(screen.availHeight > screen.availWidth){
+                document.getElementById('landscape').style.display = "none";
+                document.getElementById('portrait').style.display = "flex";                
+            }
+            else if(screen.availHeight < screen.availWidth){
+                document.getElementById('landscape').style.display = "flex";
+                document.getElementById('portrait').style.display = "none";                
+            }
+
+        }, false);
     </script>
 </body>
 </html>

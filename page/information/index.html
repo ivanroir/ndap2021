@@ -44,6 +44,12 @@
             cursor: pointer;            
         }
 
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+
     </style>    
 </head>
 <body>
@@ -58,46 +64,66 @@
         Your browser does not support the audio element.
     </audio>
 
-    <div class="row">
+
+    <div id="portrait" style="display: flex; align-items: center; justify-content: center; height:100%; width: 100%; color: white">
+        <h1>PLEASE USE LANDSCAPE</h1>
+    </div>  
+
+    <div class="row" id="landscape">
+        <div class="row">
         <div class="col-6 button-center">
-            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" style="width: 40%;" />
-            <img class="img" src="img/information/button/ElectionText.png" style="position: absolute; width: 15%;">
+            <a href="https://ndap2021.online/page/information/election/">
+                <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);"/>
+                <img class="img" src="img/information/button/ElectionText.png" style="position: absolute; width: 15%;">
+            </a>
         </div>
         <div class="col-6 button-center">
-            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" style="width: 40%;" />
-            <img class="img" src="img/information/button/PreTestText.png" style="position: absolute; width: 15%;">
+            <a href="https://ndap2021.online/page/information/test/">
+                <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);"/>
+                <img class="img" src="img/information/button/PreTestText.png" style="position: absolute; width: 15%;">
+            </a>
         </div>
     </div>
     
 
     <div class="row">
         <div class="col-6 button-center">
-            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" style="width: 40%;" />
-            <img class="img" src="img/information/button/EvaluationText.png" style="position: absolute; width: 15%;"> 
+            <a href="https://ndap2021.online/page/information/evaluation/">
+                <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
+                <img class="img" src="img/information/button/EvaluationText.png" style="position: absolute; width: 15%;"> 
+            </a>
         </div>
         <div class="col-6 button-center">
-            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" style="width: 40%;" />
-            <img class="img" src="img/information/button/CertificateText.png" style="position: absolute; width: 15%;"> 
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-6 button-center">
-            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" style="width: 40%;" />
-            <img class="img" src="img/information/button/MembershipText.png" style="position: absolute; width: 15%;"> 
-        </div>
-        <div class="col-6 button-center">
-            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" style="width: 40%;" />
-            <img class="img" src="img/information/button/SouvenirText.png" style="position: absolute; width: 13%;"> 
+            <a href="https://ndap2021.online/page/information/certificate/">
+                <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
+                <img class="img" src="img/information/button/CertificateText.png" style="position: absolute; width: 15%;"> 
+            </a>
         </div>
     </div>
 
     <div class="row">
         <div class="col-6 button-center">
+            <a href="https://ndap2021.online/page/information/membership/">
+                <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
+                <img class="img" src="img/information/button/MembershipText.png" style="position: absolute; width: 15%;"> 
+            </a>
         </div>
         <div class="col-6 button-center">
-            <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" style="width: 40%;" />
-            <img class="img" src="img/information/button/ExitText.png" style="position: absolute; width: 7%;"> 
+            <a href="https://ndap2021.online/page/information/souvenir/">
+                <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
+                <img class="img" src="img/information/button/SouvenirText.png" style="position: absolute; width: 13%;"> 
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 button-center">
+        </div>
+        <div class="col-6 button-center">
+            <a href="https://ndap2021.online/page/information/test/">
+                <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
+                <img class="img" src="img/information/button/ExitText.png" style="position: absolute; width: 7%;"> 
+            </a>
         </div>
     </div>
 
@@ -128,6 +154,29 @@
                 ctr++;
             }
         }, 10);
+    </script>
+
+    <script>
+        if(screen.availHeight > screen.availWidth){
+            document.getElementById('landscape').style.display = "none";
+            document.getElementById('portrait').style.display = "flex";            
+        }
+        else if(screen.availHeight < screen.availWidth){
+            document.getElementById('landscape').style.display = "flex";
+            document.getElementById('portrait').style.display = "none";            
+        }
+        window.addEventListener("orientationchange", function() {
+            // Announce the new orientation number
+            if(screen.availHeight > screen.availWidth){
+                document.getElementById('landscape').style.display = "none";
+                document.getElementById('portrait').style.display = "flex";                
+            }
+            else if(screen.availHeight < screen.availWidth){
+                document.getElementById('landscape').style.display = "flex";
+                document.getElementById('portrait').style.display = "none";                
+            }
+
+        }, false);
     </script>
 </body>
 </html>
