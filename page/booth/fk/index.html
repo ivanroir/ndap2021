@@ -51,6 +51,28 @@
       z-index: 3;
     }
 
+    .download {
+      position: absolute;
+      top: 62%;
+      left: 70%;
+      z-index: 4;
+    }
+    
+    .download-button {
+      width: 5em;
+      height: 3em;
+      background: rgba(0,0,0,0);
+      opacity: 0;
+      z-index: 4;
+    }
+
+    .download-button-1 {
+      width: 5em;
+      height: 3em;
+      background: lightgreen;
+      z-index: 4;
+    }
+
   </style>
 </head>
 
@@ -63,6 +85,9 @@
           <video id="video1" style="width: 22.4%; margin-left: 2.7%;" autoplay  onclick="video1()">
             <source src="video/video1.mp4" type="video/mp4" allowfullscreen> 
           </video>
+        </div>
+        <div class="download">
+          <a href="https://drive.google.com/file/d/1cFlCX8loj_9qYnGFZh0MK64c7lQRaF0Z/view?usp=sharing"> <button class="download-button"></button> </a>
         </div>
         <div class="poster">
             <button class="poster-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> </button>
