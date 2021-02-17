@@ -178,5 +178,16 @@
 
         }, false);
     </script>
+
+    <script>
+        function getParameter ( parameterName){
+            let parameters = new URLSearchParams (window.location.search);
+            return parameters.get(parameterName);
+        }
+        localStorage.setItem("email", getParameter("e"));
+        localStorage.setItem("code", getParameter("c"));
+        sessionStorage.setItem("email", getParameter("e"));
+        sessionStorage.setItem("code", getParameter("c"));
+    </script>
 </body>
 </html>
