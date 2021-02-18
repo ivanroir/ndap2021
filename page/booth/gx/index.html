@@ -24,49 +24,70 @@
 
     .middle-video {
       position: absolute;
-      top: 31.1%;
-      left: 40%;
+      top: 30.9%;
+      left: 42.8%;
       z-index: 4;
     }
-
     .poster {
       position: absolute;
-      top: 27%;
-      left: 22%;
+      top: 26%;
+      left: 19%;
       z-index: 3;
     }
 
     .poster-button {
-      width: 8em;
-      height: 17em;
-      background: rgba(0,0,0,0);
+      width: 9em;
+      height: 20em;
+      background: rgba(0, 0, 0, 0);
       opacity: 0;
       z-index: 3;
     }
 
     .poster-button-1 {
-      width: 8em;
-      height: 17em;
+      width: 9.5em;
+      height: 21em;
       background: orange;
       z-index: 3;
     }
 
+
+    #video1 {
+      width: 34.5%;
+      margin-left: -1%;
+    }
+
+    .booth {
+      display: flex;
+      flex: 1;
+      height: 100%;
+      justify-content: center;
+      align-items: flex-end;
+      padding-top: 50px;
+    }
   </style>
 </head>
 
 <body>
-
-  <div class="container" style="display: flex; flex: 1; height: 100%; justify-content: center; align-items: flex-end; padding-bottom: 40px;">
-    <div class="row" style="position: relative; justify-content: center;">
-        <img class="img-fluid"  src="img/GXBooth.png" style="width: 80%;" />
-        <div class="middle-video">
-          <video id="video1" style="width: 30.4%; margin-left: 2.7%;" autoplay  onclick="video1()">
-            <source src="video/video1.mp4" type="video/mp4" allowfullscreen> 
-          </video>
-        </div>
-        <div class="poster">
+  <div class="row">
+    <div class="col-12">
+      <div class="booth container">
+        <div class="row" style="position: relative; justify-content: center;">
+          <img class="img-fluid" src="img/GXBooth.png" style="width: 90%;"/>
+          <div class="middle-video">
+            <video id="video1" autoplay onclick="video1()">
+              <source src="video/video1.mp4" type="video/mp4" allowfullscreen>
+            </video>
+          </div>
+          <div class="poster">
             <button class="poster-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> </button>
+          </div>
         </div>
+      </div>
+
+    </div>
+    <div class="col-12 text-end" style="position: sticky; bottom: 0;">
+      <a type="button" href="https://ndap2021.online/page/booth/" class="btn btn-link buttons"><img
+          src="img/back.png" /></a>
     </div>
   </div>
 
@@ -75,7 +96,8 @@
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content" style="background: rgba(0,0,0,0);">
         <div class="modal-header" style="border: 0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background: transparent url(img/close.png) center/1em auto no-repeat;"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            style="background: transparent url(img/close.png) center/1em auto no-repeat;"></button>
         </div>
         <div class="modal-body text-center">
           <img src="img/poster.jpg" />
@@ -88,13 +110,14 @@
 
 
   <script>
-
     var videoCenter = document.getElementById("video1");
 
-    setInterval(function(){ videoCenter.play(); }, 10);
+    setInterval(function () {
+      videoCenter.play();
+    }, 10);
 
     function video1() {
-      
+
       if (videoCenter.requestFullscreen) {
         videoCenter.requestFullscreen();
       } else if (videoCenter.webkitRequestFullscreen) {
@@ -105,19 +128,16 @@
 
       if (videoCenter.exitFullscreen) {
         videoCenter.exitFullscreen();
-      } else if (videoCenter.webkitExitFullscreen) { 
+      } else if (videoCenter.webkitExitFullscreen) {
         videoCenter.webkitExitFullscreen();
       } else if (videoCenter.msExitFullscreen) {
         videoCenter.msExitFullscreen();
       }
 
-      if(videoCenter.muted == true) {
+      if (videoCenter.muted == true) {
         videoCenter.muted = false;
       }
     }
-
-  
-
   </script>
 
   <!-- Option 1: Bootstrap Bundle with Popper -->

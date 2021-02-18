@@ -25,115 +25,137 @@
     .middle-video {
       position: absolute;
       top: 26.5%;
-      left: 34.8%;
-      z-index: 1;
+      left: 38.5%;
+      z-index: 3;
     }
 
     .left-video {
       position: absolute;
-      top: 45%;
+      top: 44.9%;
     }
 
     .newsletter-1 {
       position: absolute;
+      left: 68.9%;
       top: 34%;
-      right: 24.5%;
-      z-index: 2;
+      z-index: 3;
     }
-    
+
     .newsletter-2 {
       position: absolute;
+      left: 68.9%;
       top: 53%;
-      right: 24.5%;
-      z-index: 2;
+      z-index: 3;
     }
 
     .newsletter-3 {
       position: absolute;
+      left: 68.9%;
       top: 71%;
-      right: 24.5%;
-      z-index: 2;
+      z-index: 3;
     }
 
     .newsletter-button {
-      width: 5vw;
-      height: 4vw;
-      background: rgba(0,0,0,0);
+      width: 6vw;
+      height: 5vw;
+      background: rgba(0, 0, 0, 0);
       opacity: 0;
       z-index: 2;
     }
 
     .poster-1 {
       position: absolute;
-      top: 40%;
+      top: 33%;
       left: 26%;
-      z-index: 3;
+      z-index: 2;
     }
 
     .poster-2 {
       position: absolute;
-      top: 43%;
-      right: 13%;
+      top: 40%;
+      left: 80%;
       z-index: 3;
     }
 
     .poster-button-1 {
       width: 9vw;
-      height: 13vw;
-      background: rgba(0,0,0,0);
+      height: 19vw;
+      background: rgba(0, 0, 0, 0);
       opacity: 0;
       z-index: 3;
     }
 
     .poster-button-2 {
-      width: 5vw;
-      height: 13vw;
-      background: rgba(0,0,0,0);
+      width: 7vw;
+      height: 17vw;
+      background: rgba(0, 0, 0, 0);
       opacity: 0;
       z-index: 3;
     }
 
+    #video1 {
+      width: 24.2%;
+    }
+
+    #video2 {
+      width: 14%;
+      margin-left: 6.8%;
+    }
+
+    .booth {
+      display: flex;
+      flex: 1;
+      height: 100%;
+      justify-content: center;
+      align-items: flex-end;
+      padding-top: 40px;
+    }
   </style>
 </head>
 
 <body>
 
-  <div class="container" style="display: flex; flex: 1; height: 100%; justify-content: center; align-items: flex-end;">
-    <div class="row" style="padding-bottom: 75px;">
-      <div class="col" style="position: relative;">
-        <img src="img/AjinomotoBooth.png" style="width: inherit;" />
-        <div class="middle-video">
-          <video id="video1" style="width: 36%;  margin-left: 7%;" autoplay  onclick="video1()">
-            <source src="video/center.mp4" type="video/mp4" allowfullscreen> 
-          </video>
+  <div class="row">
+    <div class="col-12">
+      <div class="booth">
+
+        <div class="row" style="position: relative; justify-content: center;">
+            <img class="img-fluid" src="img/AjinomotoBooth.png" />
+            <div class="middle-video">
+              <video id="video1" autoplay onclick="video1()">
+                <source src="video/center.mp4" type="video/mp4" allowfullscreen>
+              </video>
+            </div>
+            <div class="left-video">
+              <video id="video2"  autoplay muted onclick="video2()">
+                <source src="video/left.mp4" type="video/mp4">
+              </video>
+            </div>
+            <a class="newsletter-1" href="https://drive.google.com/file/d/1wAVmXULETVlC9Dw0_KDPONSEo79ySq0V/view?usp=sharing"
+              target="_blank">
+              <button class="newsletter-button"> </button>
+            </a>
+            <a class="newsletter-2" href="https://drive.google.com/file/d/1zVyhHgucDeCBKXZSmsgQZhCgNoxxPdF7/view?usp=sharing"
+              target="_blank">
+              <button class="newsletter-button"> </button>
+            </a>
+            <a class="newsletter-3" href="https://drive.google.com/file/d/1yOqlOEV_UsYrYrUq0aMpeyRRTNTe122d/view?usp=sharing"
+              target="_blank">
+              <button class="newsletter-button"> </button>
+            </a>
+            <div class="poster-1">
+              <button class="poster-button-1" data-bs-toggle="modal" data-bs-target="#poster1"> </button>
+            </div>
+            <div class="poster-2">
+              <button class="poster-button-2" data-bs-toggle="modal" data-bs-target="#poster2"> </button>
+            </div>
         </div>
-        <div class="left-video">
-          <video id="video2" style="width: 14%; margin-left: 6.7%;" autoplay muted onclick="video2()">
-            <source src="video/left.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="newsletter-1">
-          <a href="https://drive.google.com/file/d/1wAVmXULETVlC9Dw0_KDPONSEo79ySq0V/view?usp=sharing" target="_blank">
-            <button class="newsletter-button"> </button>
-          </a>
-        </div>
-        <div class="newsletter-2">
-          <a href="https://drive.google.com/file/d/1zVyhHgucDeCBKXZSmsgQZhCgNoxxPdF7/view?usp=sharing" target="_blank">
-            <button class="newsletter-button"> </button>
-          </a>
-        </div>
-        <div class="newsletter-3">
-          <a href="https://drive.google.com/file/d/1yOqlOEV_UsYrYrUq0aMpeyRRTNTe122d/view?usp=sharing" target="_blank">
-            <button class="newsletter-button"> </button>
-          </a>
-        </div>
-        <div class="poster-1">
-            <button class="poster-button-1" data-bs-toggle="modal" data-bs-target="#poster1"> </button>
-        </div>
-        <div class="poster-2">
-          <button class="poster-button-2" data-bs-toggle="modal" data-bs-target="#poster2"> </button>
       </div>
-      </div>
+
+    </div>
+    <div class="col-12 text-end" style="position: sticky; bottom: 0;">
+      <a type="button" href="https://ndap2021.online/page/booth/" class="btn btn-link buttons"><img
+          src="img/back.png" /></a>
     </div>
   </div>
 
@@ -142,7 +164,8 @@
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content" style="background: rgba(0,0,0,0);">
         <div class="modal-header" style="border: 0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background: transparent url(img/close.png) center/1em auto no-repeat;"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            style="background: transparent url(img/close.png) center/1em auto no-repeat;"></button>
         </div>
         <div class="modal-body text-center">
           <img src="img/poster1.png" />
@@ -155,7 +178,8 @@
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content" style="background: rgba(0,0,0,0);">
         <div class="modal-header" style="border: 0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background: transparent url(img/close.png) center/1em auto no-repeat;"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            style="background: transparent url(img/close.png) center/1em auto no-repeat;"></button>
         </div>
         <div class="modal-body text-center">
           <img src="img/poster2.png" />
@@ -169,12 +193,15 @@
 
 
   <script>
-
     var videoCenter = document.getElementById("video1");
     var videoLeft = document.getElementById("video2");
 
-    setInterval(function(){ videoCenter.play(); }, 10);
-    setInterval(function(){ videoLeft.play(); }, 10);
+    setInterval(function () {
+      videoCenter.play();
+    }, 10);
+    setInterval(function () {
+      videoLeft.play();
+    }, 10);
 
     function video1() {
 
@@ -187,14 +214,14 @@
       }
 
       if (document.exitFullscreen) {
-          document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) { 
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
       } else if (document.msExitFullscreen) {
         document.msExitFullscreen();
       }
 
-      if(videoCenter.muted == true) {
+      if (videoCenter.muted == true) {
         videoLeft.muted = true;
         videoCenter.muted = false;
       }
@@ -211,20 +238,18 @@
       }
 
       if (document.exitFullscreen) {
-          document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) { 
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
         document.webkitExitFullscreen();
       } else if (document.msExitFullscreen) {
         document.msExitFullscreen();
       }
 
-      if(videoLeft.muted == true) {
+      if (videoLeft.muted == true) {
         videoCenter.muted = true;
         videoLeft.muted = false;
       }
     }
-
-
   </script>
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
