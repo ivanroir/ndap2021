@@ -49,6 +49,16 @@
             align-items: center;
             justify-content: center;
          }
+         
+         .modal-header{
+            display: inline;
+            padding: 0;
+            border-bottom: 0;
+         }
+         
+         .modal-footer{
+            border-top: 0;
+         }
 
     </style>    
 </head>
@@ -127,6 +137,33 @@
         </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title text-center" id="staticBackdropLabel">WELCOME </h2>
+                </div>
+                <div class="modal-body text-center ">
+                    <h4  style="font-weight: normal;">INFORMATION CENTER</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="enter();">ENTER</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $('#staticBackdrop').modal('show');
+        });
+    </script>
+    
     <script>
         function hover(element) {
             element.setAttribute('src', 'img/information/button/ButtonHover.png');
@@ -140,21 +177,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        var ctr = 0;
         var bgm = document.getElementById("bgm");
         bgm.volume = 0.1;
 
         var voiceOver = document.getElementById("voice-over");
         voiceOver.volume = 1;
 
-        setInterval(function(){ bgm.play(); }, 10);
-        setInterval(function(){ 
-            if (ctr < 100) {
-                voiceOver.play(); 
-                ctr++;
-            }
-        }, 10);
+        function enter (){
+            bgm.play();
+            voiceOver.play();
+        }
+    
     </script>
+
 
     <script>
         if(screen.availHeight > screen.availWidth){

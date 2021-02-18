@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -11,43 +12,55 @@
             font-family: Pirulen;
             src: url(font/pirulen.ttf);
         }
-        
+
         body {
             background-image: url("img/booth/bg.png");
             background-repeat: no-repeat;
-            background-size: cover; 
+            background-size: cover;
             height: 100vh;
             overflow: hidden;
         }
 
         .overlay {
-            position: absolute; 
+            position: absolute;
             bottom: 50px;
             left: 0;
             text-align: center;
             padding-bottom: 20px;
         }
+        
+        .modal-header{
+            display: inline;
+            padding: 0;
+            border-bottom: 0;
+         }
+         
+         .modal-footer{
+            border-top: 0;
+         }
 
     </style>
 </head>
+
 <body>
 
-    <audio id="bgm" autoplay loop>
+    <audio id="bgm" autoplay mute loop>
         <source src="audio/bgm.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
-    <audio id="voice-over" autoplay>
+    <audio id="voice-over" autoplay mute>
         <source src="audio/voice_over.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
-    <div id="portrait" style="display: flex; align-items: center; justify-content: center; height:100%; width: 100%; color: white">
+    <div id="portrait"
+        style="display: flex; align-items: center; justify-content: center; height:100%; width: 100%; color: white">
         <h1>PLEASE USE LANDSCAPE</h1>
-    </div>  
+    </div>
 
     <div class="row" id="landscape" style="height: 100%; padding: 0; margin: 0">
         <div class="col-2" style="position: relative; padding: 0px;">
-            <img class="img-fluid"src="img/booth/banner.png" style="height: 100%; width: 100%;" /> 
+            <img class="img-fluid" src="img/booth/banner.png" style="height: 100%; width: 100%;" />
             <div class="overlay">
                 <div class="row">
                     <div class="col-6 p-1 text-end">
@@ -60,44 +73,76 @@
             </div>
         </div>
         <div class="col-10 " style="display: flex">
-                <div id="first" class="col-12" >
-                    <div class="row" style="height: 90%; align-items: center; ">
-                        <div class="col-12 text-center" style="padding-bottom: 10px;">
-                            <a href="https://abbottnutri.com.ph/"><img class="img-fluid" src="img/booth/AbbottBooth.png" style="width: 60%;" /></a>
-                        </div>
-                        <div class="col-12 text-center" style="padding-bottom: 10px;">
-                            <a href="https://ndap2021.online/page/booth/ajinomoto/"><img class="img-fluid" src="img/booth/AjinomotoBooth.png" style="width: 60%;" /></a>
-                        </div>
+            <div id="first" class="col-12">
+                <div class="row" style="height: 90%; align-items: center; ">
+                    <div class="col-12 text-center" style="padding-bottom: 10px;">
+                        <a href="https://abbottnutri.com.ph/"><img class="img-fluid" src="img/booth/AbbottBooth.png"
+                                style="width: 60%;" /></a>
+                    </div>
+                    <div class="col-12 text-center" style="padding-bottom: 10px;">
+                        <a href="https://ndap2021.online/page/booth/ajinomoto/"><img class="img-fluid"
+                                src="img/booth/AjinomotoBooth2.png" style="width: 60%;" /></a>
                     </div>
                 </div>
-                <div id="second" class="col-12" style="display: none;">
-                    <div class="row" style="height: 100%; padding: 40px;  ">
-                        <div class="col-6 text-center">
-                            <a href="https://ndap2021.online/page/booth/fk/"><img src="img/booth/FK Booth.png" style="width: 70%;"  /></a>
-                        </div>
-                        <div class="col-6 text-center">
-                            <a href="https://ndap2021.online/page/booth/gx/"><img src="img/booth/GX Booth.png" style="width: 70%;" /></a>
-                        </div>
-                        <div class="col-6 text-center">
-                            <a href="https://ndap2021.online/page/booth/westmont/"><img src="img/booth/Westmont Booth.png" style="width: 70%;" /></a>
-                        </div>
-                        <div class="col-6 text-center">
-                            <a href="https://ndap2021.online/page/booth/yakult/"><img src="img/booth/Yakult Booth.png" style="width: 70%;" /></a>
-                        </div>
+            </div>
+            <div id="second" class="col-12" style="display: none;">
+                <div class="row" style="height: 100%; padding: 40px;  ">
+                    <div class="col-6 text-center">
+                        <a href="https://ndap2021.online/page/booth/fk/"><img src="img/booth/FKBooth.png"
+                                style="width: 70%;" /></a>
+                    </div>
+                    <div class="col-6 text-center">
+                        <a href="https://ndap2021.online/page/booth/gx/"><img src="img/booth/GX Booth.png"
+                                style="width: 70%;" /></a>
+                    </div>
+                    <div class="col-6 text-center">
+                        <a href="https://ndap2021.online/page/booth/westmont/"><img src="img/booth/Westmont Booth.png"
+                                style="width: 70%;" /></a>
+                    </div>
+                    <div class="col-6 text-center">
+                        <a href="https://ndap2021.online/page/booth/yakult/"><img src="img/booth/Yakult Booth.png"
+                                style="width: 70%;" /></a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title text-center" id="staticBackdropLabel">WELCOME </h2>
+                </div>
+                <div class="modal-body text-center ">
+                    <h4  style="font-weight: normal;">NDAP VIRTUAL BOOTH EXHIBIT</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="enter();">ENTER</button>
+                </div>
+            </div>
         </div>
     </div>
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $('#staticBackdrop').modal('show');
+        });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         function next() {
-            if(document.getElementById("first").style.display == "none") {
+            if (document.getElementById("first").style.display == "none") {
                 document.getElementById("first").style.display = "block";
                 document.getElementById("second").style.display = "none";
-            }
-            else {
+            } else {
                 document.getElementById("first").style.display = "none";
                 document.getElementById("second").style.display = "block";
             }
@@ -105,49 +150,43 @@
     </script>
 
     <script>
-
-        var ctr = 0;
         var bgm = document.getElementById("bgm");
         bgm.volume = 0.1;
 
         var voiceOver = document.getElementById("voice-over");
         voiceOver.volume = 1;
-        
-        setInterval(function(){ bgm.play(); }, 10);
-        setInterval(function(){ 
-            if (ctr < 100) {
-                voiceOver.play(); 
-                ctr++;
-            }
-        }, 10);
+
+        function enter (){
+            bgm.play();
+            voiceOver.play();
+        }
+       
     </script>
 
     <script>
-        if(screen.availHeight > screen.availWidth){
+        if (screen.availHeight > screen.availWidth) {
             document.getElementById('landscape').style.display = "none";
-            document.getElementById('portrait').style.display = "flex";            
-        }
-        else if(screen.availHeight < screen.availWidth){
+            document.getElementById('portrait').style.display = "flex";
+        } else if (screen.availHeight < screen.availWidth) {
             document.getElementById('landscape').style.display = "flex";
-            document.getElementById('portrait').style.display = "none";            
+            document.getElementById('portrait').style.display = "none";
         }
-        window.addEventListener("orientationchange", function() {
+        window.addEventListener("orientationchange", function () {
             // Announce the new orientation number
-            if(screen.availHeight > screen.availWidth){
+            if (screen.availHeight > screen.availWidth) {
                 document.getElementById('landscape').style.display = "none";
-                document.getElementById('portrait').style.display = "flex";                
-            }
-            else if(screen.availHeight < screen.availWidth){
+                document.getElementById('portrait').style.display = "flex";
+            } else if (screen.availHeight < screen.availWidth) {
                 document.getElementById('landscape').style.display = "flex";
-                document.getElementById('portrait').style.display = "none";                
+                document.getElementById('portrait').style.display = "none";
             }
 
         }, false);
     </script>
 
     <script>
-        function getParameter ( parameterName){
-            let parameters = new URLSearchParams (window.location.search);
+        function getParameter(parameterName) {
+            let parameters = new URLSearchParams(window.location.search);
             return parameters.get(parameterName);
         }
         localStorage.setItem("email", getParameter("e"));
@@ -156,4 +195,5 @@
         sessionStorage.setItem("code", getParameter("c"));
     </script>
 </body>
+
 </html>
