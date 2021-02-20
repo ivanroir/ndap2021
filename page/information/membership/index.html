@@ -81,7 +81,7 @@
 
     <div class="container">
         <!--  Employment Information    -->
-        <form action="../../../membership.php" method="post">
+        <form id="form" action="../../../membership.php" method="post">
             <input type="hidden" id="username" name="username" readonly hidden/>
             <input type="hidden" id="password" name="password" readonly hidden/>
             <div class="row mt-5">
@@ -377,8 +377,7 @@
                             class="btn btn-link buttons">BACK</a>
                     </div>
                     <div class="col-6 text-end ">
-                        <button onclick="window.location.href = 'index.html';" type="submit"
-                            class="btn btn-link buttons">SEND</button>
+                        <button type="submit" class="btn btn-link buttons" onclick="submit();">SEND</button>
                     </div>
                 </div>
             </div>
@@ -447,10 +446,15 @@
                         document.getElementById("mail").checked = false;
                         document.getElementById("shipping").disabled = true;
                         document.getElementById("shipping").value = "";
-
                     }
                 }
             }
+        }
+
+        function submit() {
+            sessionStorage.setItem("membership", "done");
+            localStorage.setItem("membership", "done");
+            //document.getElementById("form").submit();
         }
     </script>
     <script>
