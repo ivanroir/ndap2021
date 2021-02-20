@@ -64,7 +64,7 @@
             <div class="overlay">
                 <div class="row">
                     <div class="col-6 p-1 text-end">
-                        <button class="btn" onclick="next()"><img class="img-fluid" src="img/booth/home.png" /></button>
+                        <button class="btn" onclick="home()"><img class="img-fluid" src="img/booth/home.png" /></button>
                     </div>
                     <div class="col-6 p-1 text-start">
                         <button class="btn" onclick="next()"><img class="img-fluid" src="img/booth/next.png" /></button>
@@ -76,27 +76,55 @@
             <div id="first" class="col-12">
                 <div class="row" style="height: 90%; align-items: center; ">
                     <div class="col-12 text-center" style="padding-bottom: 10px;">
-                        <a href="https://abbottnutri.com.ph/"><img class="img-fluid" src="img/booth/AbbottBooth.png"
+                        <a href="https://abbottnutri.com.ph/"><img class="img-fluid" src="img/booth/Abbott Booth.png"
                                 style="width: 60%;" /></a>
                     </div>
                     <div class="col-12 text-center" style="padding-bottom: 10px;">
                         <a href="https://ndap2021.online/page/booth/ajinomoto/"><img class="img-fluid"
-                                src="img/booth/AjinomotoBooth2.png" style="width: 60%;" /></a>
+                                src="img/booth/Ajinomoto Booth2.png" style="width: 60%;" /></a>
                     </div>
                 </div>
             </div>
             <div id="second" class="col-12" style="display: none;">
+                <div class="row" style="height: 90%; align-items: center; ">
+                    <div class="col-12 text-center" style="padding-bottom: 10px;">
+                        <a href="https://ndap2021.online/page/booth/kalbe/"><img class="img-fluid" src="img/booth/Kalbe Booth.png"
+                                style="width: 60%;" /></a>
+                    </div>
+                    <div class="col-12 text-center" style="padding-bottom: 10px;">
+                        <a href="https://ndap2021.online/page/booth/nestle"><img class="img-fluid"
+                                src="img/booth/Nestle Booth.png" style="width: 60%;" /></a>
+                    </div>
+                </div>
+            </div>
+            <div id="third" class="col-12" style="display: none;">
                 <div class="row" style="height: 100%; padding: 40px;  ">
                     <div class="col-6 text-center">
-                        <a href="https://ndap2021.online/page/booth/fk/"><img src="img/booth/FKBooth.png"
+                        <a href="https://ndap2021.online/page/booth/fk/"><img src="img/booth/FK Booth.png"
                                 style="width: 70%;" /></a>
                     </div>
                     <div class="col-6 text-center">
                         <a href="https://ndap2021.online/page/booth/gx/"><img src="img/booth/GX Booth.png"
                                 style="width: 70%;" /></a>
                     </div>
+                    <div class="col-12 text-center">
+                        <div class="row">
+                            <div class="col-3">
+                            </div>
+                            <div class="col-6 text-center">
+                                <a href="https://ndap2021.online/page/booth/westmont/"><img src="img/booth/Westmont Booth.png"
+                                        style="width: 70%;" /></a>
+                            </div>
+                            <div class="col-3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="fourth" class="col-12" style="display: none;">
+                <div class="row" style="height: 100%; padding: 40px; align-items: center; ">
                     <div class="col-6 text-center">
-                        <a href="https://ndap2021.online/page/booth/westmont/"><img src="img/booth/Westmont Booth.png"
+                        <a href="https://ndap2021.online/page/booth/stada/"><img src="img/booth/Stada Booth.png"
                                 style="width: 70%;" /></a>
                     </div>
                     <div class="col-6 text-center">
@@ -138,14 +166,40 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        var page = 1;
+
         function next() {
-            if (document.getElementById("first").style.display == "none") {
+            page++;
+            if (page == 1) {
                 document.getElementById("first").style.display = "block";
                 document.getElementById("second").style.display = "none";
-            } else {
+                document.getElementById("third").style.display = "none";
+                document.getElementById("fourth").style.display = "none";
+            } else if (page == 2) {
                 document.getElementById("first").style.display = "none";
                 document.getElementById("second").style.display = "block";
+                document.getElementById("third").style.display = "none";
+                document.getElementById("fourth").style.display = "none";
+            } else if (page == 3) {
+                document.getElementById("first").style.display = "none";
+                document.getElementById("second").style.display = "none";
+                document.getElementById("third").style.display = "block";
+                document.getElementById("fourth").style.display = "none";
+            } else if (page == 4) {
+                document.getElementById("first").style.display = "none";
+                document.getElementById("second").style.display = "none";
+                document.getElementById("third").style.display = "none";
+                document.getElementById("fourth").style.display = "block";
+                page = 0;
             }
+        }
+
+        function home(){
+            page = 1;
+            document.getElementById("first").style.display = "block";
+            document.getElementById("second").style.display = "none";
+            document.getElementById("third").style.display = "none";
+            document.getElementById("fourth").style.display = "none";
         }
     </script>
 

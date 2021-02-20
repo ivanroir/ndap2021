@@ -80,9 +80,10 @@
     </div>
 
     <div class="container">
-        
-            <!--  Employment Information    -->
-
+        <!--  Employment Information    -->
+        <form action="../../../membership.php" method="post">
+            <input type="hidden" id="username" name="username" readonly hidden/>
+            <input type="hidden" id="password" name="password" readonly hidden/>
             <div class="row mt-5">
                 <div class="col">
                     <label style="font-size: 22px; padding: 10px; background-color: #013874; color: white;">
@@ -95,7 +96,7 @@
                     <div class="row mt-4">
                         <label for="companyName" class="col-2 col-form-label text-end">Company Name: </label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="companyName" name="CompanyName">
+                            <input type="text" class="form-control" id="companyName" name="companyName">
                         </div>
                     </div>
                 </div>
@@ -104,16 +105,16 @@
                     <div class="row mt-1">
                         <label for="companyAddress" class="col-2 col-form-label text-end">Company Address: </label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="companyAddress" name="CompanyAddress">
+                            <input type="text" class="form-control" id="companyAddress" name="companyAddress">
                         </div>
                     </div>
                 </div>
 
                 <div class="col-12">
                     <div class="row mt-1">
-                        <label for="companyName" class="col-2 col-form-label text-end">Position: </label>
+                        <label for="position" class="col-2 col-form-label text-end">Position: </label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="position" name="Position">
+                            <input type="text" class="form-control" id="position" name="position">
                         </div>
                     </div>
                 </div>
@@ -134,7 +135,7 @@
                     <div class="row mt-4">
                         <label for="beneficiary" class="col-2 col-form-label text-end">Name of Beneficiary: </label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="beneficiary" name="Beneficiary">
+                            <input type="text" class="form-control" id="beneficiary" name="beneficiary">
                         </div>
                     </div>
                 </div>
@@ -143,7 +144,7 @@
                     <div class="row mt-1">
                         <label for="address" class="col-2 col-form-label text-end">Address: </label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="address" name="Address">
+                            <input type="text" class="form-control" id="address" name="address">
                         </div>
                     </div>
                 </div>
@@ -152,7 +153,7 @@
                     <div class="row mt-1">
                         <label for="contact" class="col-2 col-form-label text-end">Contact Number: </label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="contact" name="Contact">
+                            <input type="text" class="form-control" id="contact" name="contact">
                         </div>
                     </div>
                 </div>
@@ -161,7 +162,7 @@
                     <div class="row mt-1">
                         <label for="relationship" class="col-2 col-form-label text-end">Relationship to the : </label>
                         <div class="col-10">
-                            <input type="text" class="form-control" id="relationship" name="Relationship">
+                            <input type="text" class="form-control" id="relationship" name="relationship">
                         </div>
                     </div>
                 </div>
@@ -187,9 +188,9 @@
                     <div class="row mt-3">
                         <div class="col-6">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Public Health Nutrition"
-                                    id="HealthNutrition">
-                                <label class="form-check-label" for="HealthNutrition">
+                                <input class="form-check-input check" type="checkbox" value="Public Health Nutrition"
+                                    id="healthNutrition" name="dietetics[]">
+                                <label class="form-check-label" for="healthNutrition">
                                     Public Health Nutrition
                                 </label>
                             </div>
@@ -197,8 +198,9 @@
 
                         <div class="col-6">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Diabetes" id="Diabetes">
-                                <label class="form-check-label" for="Diabetes">
+                                <input class="form-check-input check" type="checkbox" value="Diabetes" id="diabetes"
+                                    name="dietetics[]">
+                                <label class="form-check-label" for="diabetes">
                                     Diabetes
                                 </label>
                             </div>
@@ -206,8 +208,9 @@
 
                         <div class="col-6">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Food Service" id="FoodService">
-                                <label class="form-check-label" for="FoodService">
+                                <input class="form-check-input check" type="checkbox" value="Food Service"
+                                    id="foodService" name="dietetics[]">
+                                <label class="form-check-label" for="foodService">
                                     Food Service
                                 </label>
                             </div>
@@ -215,9 +218,10 @@
 
                         <div class="col-6">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Integrative and Functional Nutrition"
-                                    id="FunctionalNutrition">
-                                <label class="form-check-label" for="FunctionalNutrition">
+                                <input class="form-check-input check" type="checkbox"
+                                    value="Integrative and Functional Nutrition" id="functionalNutrition"
+                                    name="dietetics[]">
+                                <label class="form-check-label" for="functionalNutrition">
                                     Integrative and Functional Nutrition
                                 </label>
                             </div>
@@ -225,9 +229,9 @@
 
                         <div class="col-6">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Sports Nutrition"
-                                    id="SportsNutrition">
-                                <label class="form-check-label" for="SportsNutrition">
+                                <input class="form-check-input check" type="checkbox" value="Sports Nutrition"
+                                    id="sportsNutrition" name="dietetics[]">
+                                <label class="form-check-label" for="sportsNutrition">
                                     Sports Nutrition
                                 </label>
                             </div>
@@ -235,8 +239,9 @@
 
                         <div class="col-6">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Renal" id="Renal">
-                                <label class="form-check-label" for="Renal">
+                                <input class="form-check-input check" type="checkbox" value="Renal" id="renal"
+                                    name="dietetics[]">
+                                <label class="form-check-label" for="renal">
                                     Renal
                                 </label>
                             </div>
@@ -244,9 +249,9 @@
 
                         <div class="col-6">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Nutrition Support"
-                                    id="NutritionSupport">
-                                <label class="form-check-label" for="NutritionSupport">
+                                <input class="form-check-input check" type="checkbox" value="Nutrition Support"
+                                    id="nutritionSupport" name="dietetics[]">
+                                <label class="form-check-label" for="nutritionSupport">
                                     Nutrition Support
                                 </label>
                             </div>
@@ -254,9 +259,9 @@
 
                         <div class="col-6">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="Pediatric and Metabolic"
-                                    id="Pediatric">
-                                <label class="form-check-label" for="Pediatric">
+                                <input class="form-check-input check" type="checkbox" value="Pediatric and Metabolic"
+                                    id="pediatric" name="dietetics[]">
+                                <label class="form-check-label" for="pediatric">
                                     Pediatric and Metabolic
                                 </label>
                             </div>
@@ -282,8 +287,9 @@
 
                 <div class="col-12 mt-3">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="RFID" value="Not Yet" id="NotYet">
-                        <label class="form-check-label" for="NotYet">
+                        <input class="form-check-input" type="radio" name="RFID" value="No" id="notYet"
+                            onclick="btnRFID()">
+                        <label class="form-check-label" for="notYet">
                             NOT YET
                         </label>
                     </div>
@@ -298,8 +304,9 @@
 
                                 <div class="col-12 ">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="notyet" value="Mail" id="Mail">
-                                        <label class="form-check-label" for="Mail">
+                                        <input class="form-check-input" type="radio" value="Mail" id="mail"
+                                            name="notyet" onclick="btnNotYet()" disabled>
+                                        <label class="form-check-label" for="mail">
                                             Please mail to this address: (shipping shouldered by the member)
                                         </label>
                                     </div>
@@ -307,14 +314,15 @@
 
                                 <div class="row">
                                     <div class="col-10">
-                                        <input type="text" class="form-control custom-input" id="shipping" name="Shipping">
+                                        <input type="text" class="form-control custom-input" id="shipping"
+                                            name="shipping" disabled>
                                     </div>
                                 </div>
 
                                 <div class="col-12 mt-4">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="notyet" value="NDAP Office"
-                                            id="NDAPOffice">
+                                        <input class="form-check-input" type="radio" value="Email" id="NDAPOffice"
+                                            name="notyet" onclick="btnNotYet()" disabled>
                                         <label class="form-check-label" for="NDAPOffice">
                                             I would like to pick it up at NDAP office (coordinate schedule with the
                                             secretariat)
@@ -335,8 +343,9 @@
 
                 <div class="col-12">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="RFID" value="Yes" id="Yes">
-                        <label class="form-check-label" for="Yes">
+                        <input class="form-check-input" type="radio" name="RFID" value="Yes" id="yes"
+                            onclick="btnRFID()">
+                        <label class="form-check-label" for="yes">
                             YES
                         </label>
                     </div>
@@ -344,8 +353,9 @@
 
                 <div class="col-12">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="RFID" value="Lost" id="Lost">
-                        <label class="form-check-label" for="Lost">
+                        <input class="form-check-input" type="radio" name="RFID" value="Lost" id="lost"
+                            onclick="btnRFID()">
+                        <label class="form-check-label" for="lost">
                             I LOST MY NDAP RFID
                         </label>
                     </div>
@@ -355,21 +365,98 @@
                 <div class="col-1">
                 </div>
                 <div class="col-11">
-                    <label>( please coordinate with the secretariat for the replacement; replacement fee applies. )</label>
+                    <label>( please coordinate with the secretariat for the replacement; replacement fee applies.
+                        )</label>
                 </div>
             </div>
 
             <div class="col-12">
                 <div class="row mb-4 mt-4">
                     <div class="col-6 text-start ">
-                        <button type="button" class="btn btn-link buttons" onclick="window.history.back();">BACK</button>
+                        <a href="https://ndap2021.online/page/information/" type="button"
+                            class="btn btn-link buttons">BACK</a>
                     </div>
                     <div class="col-6 text-end ">
-                        <button type="button" class="btn btn-link buttons">SEND</button>
+                        <button onclick="window.location.href = 'index.html';" type="submit"
+                            class="btn btn-link buttons">SEND</button>
                     </div>
                 </div>
             </div>
+        </form>
     </div>
+
+
+    <script>
+        var checks = document.querySelectorAll(".check");
+        var max = 2;
+        for (var i = 0; i < checks.length; i++)
+            checks[i].onclick = selectiveCheck;
+
+        function selectiveCheck(event) {
+            var checkedChecks = document.querySelectorAll(".check:checked");
+            if (checkedChecks.length >= max + 1)
+                return false;
+        }
+    </script>
+    <script>
+        var RFID = document.getElementsByName('RFID');
+        var NotYet = document.getElementsByName('notyet');
+
+        function btnRFID() {
+            for (i = 0; i < RFID.length; i++) {
+                if (RFID[i].checked) {
+                    document.getElementById("mail").checked = false;
+                    document.getElementById("NDAPOffice").checked = false;
+                    document.getElementById("shipping").value = "";
+
+                    if (RFID[i].value == "No") {
+
+                        document.getElementById("shipping").disabled = false;
+                        document.getElementById("mail").disabled = false;
+                        document.getElementById("NDAPOffice").disabled = false;
+                    }
+                    else if (RFID[i].value == "Yes") {
+                        document.getElementById("shipping").disabled = true;
+                        document.getElementById("mail").disabled = true;
+                        document.getElementById("NDAPOffice").disabled = true;
+                    }
+                    else if (RFID[i].value == "Lost") {
+                        document.getElementById("shipping").disabled = true;
+                        document.getElementById("mail").disabled = true;
+                        document.getElementById("NDAPOffice").disabled = true;
+
+                    }
+                }
+            }
+        }
+
+        function btnNotYet() {
+
+            for (j = 0; j < NotYet.length; j++) {
+
+                if (NotYet[j].checked) {
+
+                    document.getElementById("yes").checked = false;
+                    document.getElementById("lost").checked = false;
+
+                    if (NotYet[j].value === "Mail") {
+                        document.getElementById("NDAPOffice").checked = false;
+                        document.getElementById("shipping").disabled = false;
+                    }
+                    else if (NotYet[j].value === "Email") {
+                        document.getElementById("mail").checked = false;
+                        document.getElementById("shipping").disabled = true;
+                        document.getElementById("shipping").value = "";
+
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        document.getElementById("username").value = atob(localStorage.getItem("email"));
+        document.getElementById("password").value = atob(localStorage.getItem("code"));
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
