@@ -10,7 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-  <title>Kalbe</title>
+  <title>Stada</title>
   <style>
     body {
       height: 100vh;
@@ -24,82 +24,38 @@
 
     .middle-video {
       position: absolute;
-      top: 30.5%;
-      left: 38.5%;
+      top: 24.9%;
+      left: 41.8%;
+      z-index: 4;
+    }
+
+    .poster {
+      position: absolute;
+      top: 22%;
+      left: 16%;
       z-index: 3;
     }
 
-    .left-video {
-      position: absolute;
-      top: 47.7%;
-    }
-
-    .newsletter-1 {
-      position: absolute;
-      left: 68.9%;
-      top: 38%;
-      z-index: 3;
-    }
-
-    .newsletter-2 {
-      position: absolute;
-      left: 68.9%;
-      top: 56%;
-      z-index: 3;
-    }
-
-    .newsletter-3 {
-      position: absolute;
-      left: 68.9%;
-      top: 74%;
-      z-index: 3;
-    }
-
-    .newsletter-button {
-      width: 6vw;
-      height: 5vw;
+    .poster-button {
+      width: 9.5em;
+      height: 21em;
       background: rgba(0, 0, 0, 0);
       opacity: 0;
-      z-index: 2;
-    }
-
-    .poster-1 {
-      position: absolute;
-      top: 33%;
-      left: 26%;
-      z-index: 2;
-    }
-
-    .poster-2 {
-      position: absolute;
-      top: 40%;
-      left: 80%;
       z-index: 3;
     }
 
     .poster-button-1 {
-      width: 9vw;
-      height: 19vw;
-      background: rgba(0, 0, 0, 0);
-      opacity: 0;
+      width: 9.5em;
+      height: 21em;
+      background: orange;
       z-index: 3;
     }
 
-    .poster-button-2 {
-      width: 7vw;
-      height: 17vw;
-      background: rgba(0, 0, 0, 0);
-      opacity: 0;
-      z-index: 3;
-    }
+
 
     #video1 {
-      width: 24.2%;
-    }
-
-    #video2 {
-      width: 14.3%;
-      margin-left: 6.8%;
+      width: 38.4%;
+      margin-left: -1%;
     }
 
     .booth {
@@ -115,40 +71,28 @@
 
 <body>
 
+  <form action="../../../booth.php" id="form" name="form" method="post">
+    <input type="hidden" id="username" name="username" readonly hidden />
+    <input type="hidden" id="password" name="password" readonly hidden />
+    <input type="hidden" id="booth" name="booth" value="booth_stada" readonly hidden />
+    <input type="hidden" id="location" name="location" value="https://ndap2021.online/page/booth/stada/" readonly hidden />
+  </form>
+
+
   <div class="row" style="height: 100vh;">
-    <div class="col-12" style="height: 80vh;">
-      <div class="booth">
+    <div class="col-12" style="height: 90vh;">
+      <div class="booth container">
 
         <div class="row" style="position: relative; justify-content: center;">
-            <img class="img-fluid" src="img/KalbeBooth.png" />
-            <div class="middle-video">
-              <video id="video1" autoplay onclick="video1()">
-                <source src="video/center.mp4" type="video/mp4" allowfullscreen>
-              </video>
-            </div>
-            <div class="left-video">
-              <video id="video2"  autoplay muted onclick="video2()">
-                <source src="video/left.mp4" type="video/mp4">
-              </video>
-            </div>
-            <a class="newsletter-1" href="https://drive.google.com/file/d/1tElmS0JIhZPbqi5dJ4PE2gL1v16qWkY9/view?usp=sharing"
-              target="_blank">
-              <button class="newsletter-button"> </button>
-            </a>
-            <a class="newsletter-2" href="https://drive.google.com/file/d/1ImSXpZydKJx_FXwKkVi6grYmvA65czDP/view?usp=sharing"
-              target="_blank">
-              <button class="newsletter-button"> </button>
-            </a>
-            <a class="newsletter-3" href="https://drive.google.com/file/d/1RHUOxRv-1ZIQpJEmdcs3YOtmjPXMwShk/view?usp=sharing"
-              target="_blank">
-              <button class="newsletter-button"> </button>
-            </a>
-            <div class="poster-1">
-              <button class="poster-button-1" data-bs-toggle="modal" data-bs-target="#poster1"> </button>
-            </div>
-            <div class="poster-2">
-              <button class="poster-button-2" data-bs-toggle="modal" data-bs-target="#poster2"> </button>
-            </div>
+          <img class="img-fluid" src="img/StadaBooth.png" />
+          <div class="middle-video">
+            <video id="video1" autoplay onclick="video1()">
+              <source src="video/video1.mp4" type="video/mp4" allowfullscreen>
+            </video>
+          </div>
+          <div class="poster">
+            <button class="poster-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> </button>
+          </div>
         </div>
       </div>
 
@@ -160,7 +104,7 @@
   </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="poster1" tabindex="-1" aria-labelledby="poster1Label" aria-hidden="true">
+  <div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content" style="background: rgba(0,0,0,0);">
         <div class="modal-header" style="border: 0">
@@ -168,39 +112,20 @@
             style="background: transparent url(img/close.png) center/1em auto no-repeat;"></button>
         </div>
         <div class="modal-body text-center">
-          <img src="img/poster1.jpg" style="width: 95%;" />
+          <img src="img/poster.jpg" style="height: 100%;" />
         </div>
       </div>
     </div>
   </div>
-
-  <div class="modal fade" id="poster2" tabindex="-1" aria-labelledby="poster2Label" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
-      <div class="modal-content" style="background: rgba(0,0,0,0);">
-        <div class="modal-header" style="border: 0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-            style="background: transparent url(img/close.png) center/1em auto no-repeat;"></button>
-        </div>
-        <div class="modal-body text-center">
-          <img src="img/poster2.jpg" />
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal -->
 
   <!-- Optional JavaScript; choose one of the two! -->
 
 
   <script>
     var videoCenter = document.getElementById("video1");
-    var videoLeft = document.getElementById("video2");
 
     setInterval(function () {
       videoCenter.play();
-    }, 10);
-    setInterval(function () {
-      videoLeft.play();
     }, 10);
 
     function video1() {
@@ -213,43 +138,35 @@
         videoCenter.msRequestFullscreen();
       }
 
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
+      if (videoCenter.exitFullscreen) {
+        videoCenter.exitFullscreen();
+      } else if (videoCenter.webkitExitFullscreen) {
+        videoCenter.webkitExitFullscreen();
+      } else if (videoCenter.msExitFullscreen) {
+        videoCenter.msExitFullscreen();
       }
 
       if (videoCenter.muted == true) {
-        videoLeft.muted = true;
         videoCenter.muted = false;
       }
     }
+  </script>
 
-    function video2() {
+  <script>
+    document.getElementById("username").value = atob(localStorage.getItem("email"));
+    document.getElementById("password").value = atob(localStorage.getItem("code"));
 
-      if (videoLeft.requestFullscreen) {
-        videoLeft.requestFullscreen();
-      } else if (videoLeft.webkitRequestFullscreen) {
-        videoLeft.webkitRequestFullscreen();
-      } else if (videoLeft.msRequestFullscreen) {
-        videoLeft.msRequestFullscreen();
-      }
 
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
-      }
-
-      if (videoLeft.muted == true) {
-        videoCenter.muted = true;
-        videoLeft.muted = false;
+    window.onload = function () {
+      if (!sessionStorage.getItem("submitted")) {
+        sessionStorage.setItem("submitted", true);
+        document.forms['form'].submit();
+      }else {
+        console.log("already submitted, not repeating");
+        sessionStorage.removeItem("submitted");
       }
     }
+
   </script>
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
