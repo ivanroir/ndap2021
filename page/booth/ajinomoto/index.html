@@ -115,40 +115,47 @@
 
 <body>
 
+  <form action="../../../booth.php" id="form" name="form" method="post">
+    <input type="hidden" id="username" name="username" readonly hidden />
+    <input type="hidden" id="password" name="password" readonly hidden />
+    <input type="hidden" id="booth" name="booth" value="booth_ajinomoto" readonly hidden />
+    <input type="hidden" id="location" name="location" value="https://ndap2021.online/page/booth/ajinomoto/" readonly hidden />
+  </form>
+
   <div class="row" style="height: 100vh;">
     <div class="col-12" style="height: 85vh;">
       <div class="booth">
 
         <div class="row" style="position: relative; justify-content: center;">
-            <img class="img-fluid" src="img/AjinomotoBooth.png" />
-            <div class="middle-video">
-              <video id="video1" autoplay onclick="video1()">
-                <source src="video/center.mp4" type="video/mp4" allowfullscreen>
-              </video>
-            </div>
-            <div class="left-video">
-              <video id="video2"  autoplay muted onclick="video2()">
-                <source src="video/left.mp4" type="video/mp4">
-              </video>
-            </div>
-            <a class="newsletter-1" href="https://drive.google.com/file/d/1wAVmXULETVlC9Dw0_KDPONSEo79ySq0V/view?usp=sharing"
-              target="_blank">
-              <button class="newsletter-button"> </button>
-            </a>
-            <a class="newsletter-2" href="https://drive.google.com/file/d/1zVyhHgucDeCBKXZSmsgQZhCgNoxxPdF7/view?usp=sharing"
-              target="_blank">
-              <button class="newsletter-button"> </button>
-            </a>
-            <a class="newsletter-3" href="https://drive.google.com/file/d/1yOqlOEV_UsYrYrUq0aMpeyRRTNTe122d/view?usp=sharing"
-              target="_blank">
-              <button class="newsletter-button"> </button>
-            </a>
-            <div class="poster-1">
-              <button class="poster-button-1" data-bs-toggle="modal" data-bs-target="#poster1"> </button>
-            </div>
-            <div class="poster-2">
-              <button class="poster-button-2" data-bs-toggle="modal" data-bs-target="#poster2"> </button>
-            </div>
+          <img class="img-fluid" src="img/AjinomotoBooth.png" />
+          <div class="middle-video">
+            <video id="video1" autoplay onclick="video1()">
+              <source src="video/center.mp4" type="video/mp4" allowfullscreen>
+            </video>
+          </div>
+          <div class="left-video">
+            <video id="video2" autoplay muted onclick="video2()">
+              <source src="video/left.mp4" type="video/mp4">
+            </video>
+          </div>
+          <a class="newsletter-1"
+            href="https://drive.google.com/file/d/1wAVmXULETVlC9Dw0_KDPONSEo79ySq0V/view?usp=sharing" target="_blank">
+            <button class="newsletter-button"> </button>
+          </a>
+          <a class="newsletter-2"
+            href="https://drive.google.com/file/d/1zVyhHgucDeCBKXZSmsgQZhCgNoxxPdF7/view?usp=sharing" target="_blank">
+            <button class="newsletter-button"> </button>
+          </a>
+          <a class="newsletter-3"
+            href="https://drive.google.com/file/d/1yOqlOEV_UsYrYrUq0aMpeyRRTNTe122d/view?usp=sharing" target="_blank">
+            <button class="newsletter-button"> </button>
+          </a>
+          <div class="poster-1">
+            <button class="poster-button-1" data-bs-toggle="modal" data-bs-target="#poster1"> </button>
+          </div>
+          <div class="poster-2">
+            <button class="poster-button-2" data-bs-toggle="modal" data-bs-target="#poster2"> </button>
+          </div>
         </div>
       </div>
 
@@ -251,6 +258,24 @@
       }
     }
   </script>
+
+  <script>
+    document.getElementById("username").value = atob(localStorage.getItem("email"));
+    document.getElementById("password").value = atob(localStorage.getItem("code"));
+
+
+    window.onload = function () {
+      if (!sessionStorage.getItem("submitted")) {
+        sessionStorage.setItem("submitted", true);
+        document.forms['form'].submit();
+      }else {
+        console.log("already submitted, not repeating");
+        sessionStorage.removeItem("submitted");
+      }
+    }
+
+  </script>
+
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"

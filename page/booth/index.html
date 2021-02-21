@@ -28,17 +28,16 @@
             text-align: center;
             padding-bottom: 20px;
         }
-        
-        .modal-header{
+
+        .modal-header {
             display: inline;
             padding: 0;
             border-bottom: 0;
-         }
-         
-         .modal-footer{
-            border-top: 0;
-         }
+        }
 
+        .modal-footer {
+            border-top: 0;
+        }
     </style>
 </head>
 
@@ -80,16 +79,16 @@
                                 style="width: 60%;" /></a>
                     </div>
                     <div class="col-12 text-center" style="padding-bottom: 10px;">
-                        <a href="https://ndap2021.online/page/booth/ajinomoto/"><img class="img-fluid"
-                                src="img/booth/Ajinomoto Booth2.png" style="width: 60%;" /></a>
+                        <a href="https://ndap2021.online/page/booth/ajinomoto/" onclick="booth('ajinomoto');"><img
+                                class="img-fluid" src="img/booth/Ajinomoto Booth2.png" style="width: 60%;" /></a>
                     </div>
                 </div>
             </div>
             <div id="second" class="col-12" style="display: none;">
                 <div class="row" style="height: 90%; align-items: center; ">
                     <div class="col-12 text-center" style="padding-bottom: 10px;">
-                        <a href="https://ndap2021.online/page/booth/kalbe/"><img class="img-fluid" src="img/booth/Kalbe Booth.png"
-                                style="width: 60%;" /></a>
+                        <a href="https://ndap2021.online/page/booth/kalbe/"><img class="img-fluid"
+                                src="img/booth/Kalbe Booth.png" style="width: 60%;" /></a>
                     </div>
                     <div class="col-12 text-center" style="padding-bottom: 10px;">
                         <a href="https://ndap2021.online/page/booth/nestle"><img class="img-fluid"
@@ -112,8 +111,8 @@
                             <div class="col-3">
                             </div>
                             <div class="col-6 text-center">
-                                <a href="https://ndap2021.online/page/booth/westmont/"><img src="img/booth/Westmont Booth.png"
-                                        style="width: 70%;" /></a>
+                                <a href="https://ndap2021.online/page/booth/westmont/"><img
+                                        src="img/booth/Westmont Booth.png" style="width: 70%;" /></a>
                             </div>
                             <div class="col-3">
                             </div>
@@ -136,7 +135,6 @@
         </div>
     </div>
 
-    
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -146,15 +144,16 @@
                     <h2 class="modal-title text-center" id="staticBackdropLabel">WELCOME </h2>
                 </div>
                 <div class="modal-body text-center ">
-                    <h4  style="font-weight: normal;">NDAP VIRTUAL BOOTH EXHIBIT</h4>
+                    <h4 style="font-weight: normal;">NDAP VIRTUAL BOOTH EXHIBIT</h4>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="enter();">ENTER</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="enter();">ENTER</button>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script type="text/javascript">
@@ -194,7 +193,7 @@
             }
         }
 
-        function home(){
+        function home() {
             page = 1;
             document.getElementById("first").style.display = "block";
             document.getElementById("second").style.display = "none";
@@ -210,11 +209,10 @@
         var voiceOver = document.getElementById("voice-over");
         voiceOver.volume = 1;
 
-        function enter (){
+        function enter() {
             bgm.play();
             voiceOver.play();
         }
-       
     </script>
 
     <script>
@@ -243,10 +241,30 @@
             let parameters = new URLSearchParams(window.location.search);
             return parameters.get(parameterName);
         }
+
         localStorage.setItem("email", getParameter("e"));
         localStorage.setItem("code", getParameter("c"));
         sessionStorage.setItem("email", getParameter("e"));
         sessionStorage.setItem("code", getParameter("c"));
+    </script>
+
+    <script>
+        //document.getElementById("username").value = atob(localStorage.getItem("email"));
+        //document.getElementById("password").value = atob(localStorage.getItem("code"));
+    </script>
+
+    <script>
+        function booth(booth) {
+            var username = atob(localStorage.getItem("email"));
+            var password = atob(localStorage.getItem("code"));
+           
+           
+        }
+    </script>
+
+    <script>
+        document.getElementById("username").value = atob(localStorage.getItem("email"));
+        document.getElementById("password").value = atob(localStorage.getItem("code"));
     </script>
 </body>
 

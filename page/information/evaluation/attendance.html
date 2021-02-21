@@ -129,7 +129,7 @@
             </div>
             <div class="col-12">
               <div class="form-check">
-                  <input class="form-check-input" type="radio" name="attend" value="CPE/CPD" id="CPECPD">
+                  <input class="form-check-input check" type="checkbox" name="attend[]" value="CPE/CPD" id="CPECPD">
                   <label class="form-check-label" for="CPECPD">
                     CPE/CPD unit
                   </label>
@@ -144,7 +144,7 @@
             
             <div class="col-12">
               <div class="form-check">
-                  <input class="form-check-input" type="radio" name="attend" value="Program" id="Program">
+                  <input class="form-check-input check" type="checkbox" name="attend[]" value="Program" id="Program">
                   <label class="form-check-label" for="Program">
                     Program
                   </label>
@@ -159,7 +159,7 @@
             
             <div class="col-12">
               <div class="form-check">
-                  <input class="form-check-input" type="radio" name="attend" value="Exhibits" id="Exhibits">
+                  <input class="form-check-input check" type="checkbox" name="attend[]" value="Exhibits" id="Exhibits">
                   <label class="form-check-label" for="Exhibits">
                     Exhibits/Freebies
                   </label>
@@ -174,7 +174,7 @@
              
             <div class="col-12">
               <div class="form-check">
-                  <input class="form-check-input" type="radio" name="attend" value="Fellowship" id="Fellowship">
+                  <input class="form-check-input check" type="checkbox" name="attend[]" value="Fellowship" id="Fellowship">
                   <label class="form-check-label" for="Fellowship">
                     Fellowship
                   </label>
@@ -189,7 +189,7 @@
              
             <div class="col-3">
               <div class="form-check">
-                  <input class="form-check-input" type="radio" name="attend" value="Others" id="OthersAttendance">
+                  <input class="form-check-input check" type="checkbox" name="attend[]" value="Others" id="OthersAttendance">
                   <label class="form-check-label" for="OthersAttendance">
                     Others (specify):
                   </label>
@@ -411,9 +411,11 @@
         <button type="button" class="btn btn-link buttons" onclick="prevPage(3)">BACK</button>
       </div>
       <div class="col-6 text-end ">
-        <button type="button" class="btn btn-link buttons" >SEND</button>
+        <button type="submit" class="btn btn-link buttons" >SEND</button>
       </div>
     </div>
   </div>
 
 </div>
+
+

@@ -68,6 +68,13 @@
 </head>
 
 <body>
+  <form action="../../../booth.php" id="form" name="form" method="post">
+    <input type="hidden" id="username" name="username" readonly hidden />
+    <input type="hidden" id="password" name="password" readonly hidden />
+    <input type="hidden" id="booth" name="booth" value="booth_gx" readonly hidden />
+    <input type="hidden" id="location" name="location" value="https://ndap2021.online/page/booth/gx/" readonly hidden />
+  </form>
+
   <div class="row" style="height: 100vh;">
     <div class="col-12" style="height: 90vh;">
       <div class="booth container">
@@ -138,6 +145,23 @@
         videoCenter.muted = false;
       }
     }
+  </script>
+  
+  <script>
+    document.getElementById("username").value = atob(localStorage.getItem("email"));
+    document.getElementById("password").value = atob(localStorage.getItem("code"));
+
+
+    window.onload = function () {
+      if (!sessionStorage.getItem("submitted")) {
+        sessionStorage.setItem("submitted", true);
+        document.forms['form'].submit();
+      }else {
+        console.log("already submitted, not repeating");
+        sessionStorage.removeItem("submitted");
+      }
+    }
+
   </script>
 
   <!-- Option 1: Bootstrap Bundle with Popper -->
