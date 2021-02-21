@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -20,7 +21,7 @@
         }
 
         .button {
-            background: url(img/information/button/Button.png) no-repeat center center ;
+            background: url(img/information/button/Button.png) no-repeat center center;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -30,7 +31,7 @@
 
         .button:hover {
             background: url(img/information/button/ButtonHover.png) no-repeat center center;
-            
+
         }
 
         .button-center {
@@ -41,7 +42,7 @@
         }
 
         .img {
-            cursor: pointer;            
+            cursor: pointer;
         }
 
         a {
@@ -49,26 +50,43 @@
             align-items: center;
             justify-content: center;
         }
-        
-        .modal-header{
+
+        .modal-header-custom {
             display: inline;
             padding: 0;
             border-bottom: 0;
         }
-        
-        .modal-footer{
+
+        .modal-footer-custom {
             border-top: 0;
         }
 
         .hover:hover {
             cursor: pointer;
         }
-    </style>    
+
+
+        .send-message {
+            position: absolute;
+            top: 44%;
+            left: 41%;
+            z-index: 4;
+        }
+
+        .send-message-button {
+            width: 16vw;
+            height: 11vw;
+            background: rgb(0 0 0);
+            opacity: 0;
+            z-index: 4;
+        }
+    </style>
 </head>
+
 <body>
 
     <audio id="bgm" autoplay loop>
-        <source src="audio/bgm.mp3" type="audio/mp3" >
+        <source src="audio/bgm.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
@@ -78,65 +96,85 @@
     </audio>
 
 
-    <div id="portrait" style="display: flex; align-items: center; justify-content: center; height:100%; width: 100%; color: white">
+    <div id="portrait"
+        style="display: flex; align-items: center; justify-content: center; height:100%; width: 100%; color: white">
         <h1>PLEASE USE LANDSCAPE</h1>
-    </div>  
+    </div>
 
     <div class="row" id="landscape">
         <div class="row">
-        <div class="col-6 button-center">
-            <a href="https://ndap2021.online/page/information/election/">
-                <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);"/>
-                <img class="hover img" src="img/information/button/ElectionText.png" style="position: absolute; width: 15%;">
-            </a>
+            <div class="col-6 button-center">
+                <a href="https://ndap2021.online/page/information/election/">
+                    <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);"
+                        onmouseout="unhover(this);" />
+                    <img class="hover img" src="img/information/button/ElectionText.png"
+                        style="position: absolute; width: 15%;">
+                </a>
+            </div>
+            <div class="col-6 button-center">
+                <a href="https://ndap2021.online/page/information/test/">
+                    <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);"
+                        onmouseout="unhover(this);" />
+                    <img class="hover img" src="img/information/button/PreTestText.png"
+                        style="position: absolute; width: 15%;">
+                </a>
+            </div>
         </div>
-        <div class="col-6 button-center">
-            <a href="https://ndap2021.online/page/information/test/">
-                <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);"/>
-                <img class="hover img" src="img/information/button/PreTestText.png" style="position: absolute; width: 15%;">
-            </a>
-        </div>
-    </div>
-    
 
-    <div class="row">
-        <div class="col-6 button-center">
-            <a href="https://ndap2021.online/page/information/evaluation/">
-                <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
-                <img class="hover img" src="img/information/button/EvaluationText.png" style="position: absolute; width: 15%;"> 
-            </a>
-        </div>
-        <div class="col-6 button-center">
-            <a href="https://ndap2021.online/page/information/certificate/">
-                <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
-                <img class="hover img" src="img/information/button/CertificateText.png" style="position: absolute; width: 15%;"> 
-            </a>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-6 button-center">
-            <a href="https://ndap2021.online/page/information/membership/">
-                <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
-                <img class="hover img" src="img/information/button/MembershipText.png" style="position: absolute; width: 15%;"> 
-            </a>
+        <div class="row">
+            <div class="col-6 button-center">
+                <a href="https://ndap2021.online/page/information/evaluation/">
+                    <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);"
+                        onmouseout="unhover(this);" />
+                    <img class="hover img" src="img/information/button/EvaluationText.png"
+                        style="position: absolute; width: 15%;">
+                </a>
+            </div>
+            <div class="col-6 button-center">
+                <a href="https://ndap2021.online/page/information/certificate/">
+                    <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);"
+                        onmouseout="unhover(this);" />
+                    <img class="hover img" src="img/information/button/CertificateText.png"
+                        style="position: absolute; width: 15%;">
+                </a>
+            </div>
         </div>
-        <div class="col-6 button-center">
-            <a href="https://ndap2021.online/page/information/souvenir/">
-                <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
-                <img class="hover img" src="img/information/button/SouvenirText.png" style="position: absolute; width: 13%;"> 
-            </a>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-6 button-center">
+        <div class="row">
+            <div class="col-6 button-center">
+                <a href="https://ndap2021.online/page/information/membership/">
+                    <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);"
+                        onmouseout="unhover(this);" />
+                    <img class="hover img" src="img/information/button/MembershipText.png"
+                        style="position: absolute; width: 15%;">
+                </a>
+            </div>
+            <div class="col-6 button-center">
+                <a href="https://ndap2021.online/page/information/souvenir/">
+                    <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);"
+                        onmouseout="unhover(this);" />
+                    <img class="hover img" src="img/information/button/SouvenirText.png"
+                        style="position: absolute; width: 13%;">
+                </a>
+            </div>
         </div>
-        <div class="col-6 button-center">
-            <a type="button" onclick="javascript:window.close();">
-                <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
-                <img class="hover img" src="img/information/button/ExitText.png" style="position: absolute; width: 7%;"> 
-            </a>
+
+        <div class="row">
+            <div class="col-6 button-center">
+            </div>
+            <div class="col-6 button-center">
+                <a type="button" onclick="javascript:window.close();">
+                    <img class="img" src="img/information/button/Button.png" onmouseover="hover(this);"
+                        onmouseout="unhover(this);" />
+                    <img class="hover img" src="img/information/button/ExitText.png"
+                        style="position: absolute; width: 7%;">
+                </a>
+            </div>
+        </div>
+
+        <div class="send-message">
+            <button class="send-message-button" data-bs-toggle="modal" data-bs-target="#helpDeskModal"> </button>
         </div>
     </div>
 
@@ -145,18 +183,76 @@
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header modal-header-custom">
                     <h2 class="modal-title text-center" id="staticBackdropLabel">WELCOME </h2>
                 </div>
                 <div class="modal-body text-center ">
-                    <h4  style="font-weight: normal;">INFORMATION CENTER</h4>
+                    <h4 style="font-weight: normal;">INFORMATION CENTER</h4>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="enter();">ENTER</button>
+                <div class="modal-footer modal-footer-custom">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="enter();">ENTER</button>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <div class="modal fade" id="helpDeskModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="helpDeskLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background-image: url(img/information/Panel.png); background-repeat: no-repeat; background-size: 100% 100%; background-position: center center;">
+                <div class="modal-header" style="border-bottom: 0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                    </div>
+                    <div class="row">
+                        <div class="col-12 button-center">
+                            <a href="https://drive.google.com/file/d/1sKYDqCSX4lGOA0DmKTDcd0G-YSzzFbxE/view?usp=sharing">
+                                <img class="img" src="img/information/FAQ.png" style="width: 80%;"/>
+                            </a>
+                        </div>
+                        <div class="col-12 button-center">
+                            <a data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#messageModal">
+                                <img class="img" src="img/information/Send.png" style="width: 80%;" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form action="../../boothSendMessage.php" id="form" name="form" method="post">
+        <div class="modal fade" id="messageModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="messageLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="messageLabel">SEND MESSAGE</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <input type="hidden" id="email" name="username" readonly hidden />
+                            <input type="hidden" id="code" name="password" readonly hidden />
+                            <input type="hidden" name="booth" value="information_message" readonly hidden />
+                            <input type="hidden" id="location" name="location" readonly hidden />
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Modal -->
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -166,7 +262,7 @@
             $('#staticBackdrop').modal('show');
         });
     </script>
-    
+
     <script>
         function hover(element) {
             element.setAttribute('src', 'img/information/button/ButtonHover.png');
@@ -186,46 +282,49 @@
         var voiceOver = document.getElementById("voice-over");
         voiceOver.volume = 1;
 
-        function enter (){
+        function enter() {
             bgm.play();
             voiceOver.play();
         }
-    
     </script>
 
 
     <script>
-        if(screen.availHeight > screen.availWidth){
+        if (screen.availHeight > screen.availWidth) {
             document.getElementById('landscape').style.display = "none";
-            document.getElementById('portrait').style.display = "flex";            
-        }
-        else if(screen.availHeight < screen.availWidth){
+            document.getElementById('portrait').style.display = "flex";
+        } else if (screen.availHeight < screen.availWidth) {
             document.getElementById('landscape').style.display = "flex";
-            document.getElementById('portrait').style.display = "none";            
+            document.getElementById('portrait').style.display = "none";
         }
-        window.addEventListener("orientationchange", function() {
+        window.addEventListener("orientationchange", function () {
             // Announce the new orientation number
-            if(screen.availHeight > screen.availWidth){
+            if (screen.availHeight > screen.availWidth) {
                 document.getElementById('landscape').style.display = "none";
-                document.getElementById('portrait').style.display = "flex";                
-            }
-            else if(screen.availHeight < screen.availWidth){
+                document.getElementById('portrait').style.display = "flex";
+            } else if (screen.availHeight < screen.availWidth) {
                 document.getElementById('landscape').style.display = "flex";
-                document.getElementById('portrait').style.display = "none";                
+                document.getElementById('portrait').style.display = "none";
             }
 
         }, false);
     </script>
 
     <script>
-        function getParameter ( parameterName){
-            let parameters = new URLSearchParams (window.location.search);
+        function getParameter(parameterName) {
+            let parameters = new URLSearchParams(window.location.search);
             return parameters.get(parameterName);
         }
         localStorage.setItem("email", getParameter("e"));
         localStorage.setItem("code", getParameter("c"));
         sessionStorage.setItem("email", getParameter("e"));
         sessionStorage.setItem("code", getParameter("c"));
+
+        document.getElementById("email").value = atob(localStorage.getItem("email"));
+        document.getElementById("code").value = atob(localStorage.getItem("code"));
+        document.getElementById("location").value = "https://ndap2021.online/page/information/?e=" + getParameter("e") +
+            "&c=" + getParameter("c");
     </script>
 </body>
+
 </html>

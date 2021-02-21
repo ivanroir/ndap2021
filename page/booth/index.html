@@ -79,7 +79,7 @@
                                 style="width: 60%;" /></a>
                     </div>
                     <div class="col-12 text-center" style="padding-bottom: 10px;">
-                        <a href="https://ndap2021.online/page/booth/ajinomoto/" onclick="booth('ajinomoto');"><img
+                        <a id="ajinomoto" href="https://ndap2021.online/page/booth/ajinomoto/"><img
                                 class="img-fluid" src="img/booth/Ajinomoto Booth2.png" style="width: 60%;" /></a>
                     </div>
                 </div>
@@ -87,11 +87,11 @@
             <div id="second" class="col-12" style="display: none;">
                 <div class="row" style="height: 90%; align-items: center; ">
                     <div class="col-12 text-center" style="padding-bottom: 10px;">
-                        <a href="https://ndap2021.online/page/booth/kalbe/"><img class="img-fluid"
+                        <a id="kalbe" href="https://ndap2021.online/page/booth/kalbe/"><img class="img-fluid"
                                 src="img/booth/Kalbe Booth.png" style="width: 60%;" /></a>
                     </div>
                     <div class="col-12 text-center" style="padding-bottom: 10px;">
-                        <a href="https://ndap2021.online/page/booth/nestle"><img class="img-fluid"
+                        <a id="nestle" href="https://ndap2021.online/page/booth/nestle/"><img class="img-fluid"
                                 src="img/booth/Nestle Booth.png" style="width: 60%;" /></a>
                     </div>
                 </div>
@@ -99,11 +99,11 @@
             <div id="third" class="col-12" style="display: none;">
                 <div class="row" style="height: 100%; padding: 40px;  ">
                     <div class="col-6 text-center">
-                        <a href="https://ndap2021.online/page/booth/fk/"><img src="img/booth/FK Booth.png"
-                                style="width: 70%;" /></a>
+                        <a id="fk" href="https://ndap2021.online/page/booth/fk/"><img src="img/booth/FK Booth.png"
+                                style="width: 80%;" /></a>
                     </div>
                     <div class="col-6 text-center">
-                        <a href="https://ndap2021.online/page/booth/gx/"><img src="img/booth/GX Booth.png"
+                        <a id="gx" href="https://ndap2021.online/page/booth/gx/"><img src="img/booth/GX Booth.png"
                                 style="width: 70%;" /></a>
                     </div>
                     <div class="col-12 text-center">
@@ -111,8 +111,8 @@
                             <div class="col-3">
                             </div>
                             <div class="col-6 text-center">
-                                <a href="https://ndap2021.online/page/booth/westmont/"><img
-                                        src="img/booth/Westmont Booth.png" style="width: 70%;" /></a>
+                                <a id="westmont" href="https://ndap2021.online/page/booth/westmont/"><img
+                                        src="img/booth/Westmont Booth.png" style="width: 75%;" /></a>
                             </div>
                             <div class="col-3">
                             </div>
@@ -123,11 +123,11 @@
             <div id="fourth" class="col-12" style="display: none;">
                 <div class="row" style="height: 100%; padding: 40px; align-items: center; ">
                     <div class="col-6 text-center">
-                        <a href="https://ndap2021.online/page/booth/stada/"><img src="img/booth/Stada Booth.png"
+                        <a id="stada" href="https://ndap2021.online/page/booth/stada/"><img src="img/booth/Stada Booth.png"
                                 style="width: 70%;" /></a>
                     </div>
                     <div class="col-6 text-center">
-                        <a href="https://ndap2021.online/page/booth/yakult/"><img src="img/booth/Yakult Booth.png"
+                        <a id="yakult" href="https://ndap2021.online/page/booth/yakult/"><img src="img/booth/Yakult Booth.png"
                                 style="width: 70%;" /></a>
                     </div>
                 </div>
@@ -246,26 +246,20 @@
         localStorage.setItem("code", getParameter("c"));
         sessionStorage.setItem("email", getParameter("e"));
         sessionStorage.setItem("code", getParameter("c"));
+        
     </script>
 
     <script>
-        //document.getElementById("username").value = atob(localStorage.getItem("email"));
-        //document.getElementById("password").value = atob(localStorage.getItem("code"));
+      document.getElementById("ajinomoto").href = "https://ndap2021.online/page/booth/ajinomoto/?e=" + getParameter("e") + "&c=" + getParameter("c");
+      document.getElementById("kalbe").href = "https://ndap2021.online/page/booth/kalbe/?e=" + getParameter("e") + "&c=" + getParameter("c");
+      document.getElementById("nestle").href = "https://ndap2021.online/page/booth/nestle/?e=" + getParameter("e") + "&c=" + getParameter("c");
+      document.getElementById("fk").href = "https://ndap2021.online/page/booth/fk/?e=" + getParameter("e") + "&c=" + getParameter("c");
+      document.getElementById("gx").href = "https://ndap2021.online/page/booth/gx/?e=" + getParameter("e") + "&c=" + getParameter("c");
+      document.getElementById("westmont").href = "https://ndap2021.online/page/booth/westmont/?e=" + getParameter("e") + "&c=" + getParameter("c");
+      document.getElementById("stada").href = "https://ndap2021.online/page/booth/stada/?e=" + getParameter("e") + "&c=" + getParameter("c");
+      document.getElementById("yakult").href = "https://ndap2021.online/page/booth/yakult/?e=" + getParameter("e") + "&c=" + getParameter("c");
     </script>
 
-    <script>
-        function booth(booth) {
-            var username = atob(localStorage.getItem("email"));
-            var password = atob(localStorage.getItem("code"));
-           
-           
-        }
-    </script>
-
-    <script>
-        document.getElementById("username").value = atob(localStorage.getItem("email"));
-        document.getElementById("password").value = atob(localStorage.getItem("code"));
-    </script>
 </body>
 
 </html>

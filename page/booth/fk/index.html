@@ -123,7 +123,7 @@
 
     </div>
     <div class="col-12 text-end" style="position: sticky; bottom: 0;">
-      <a type="button" href="https://ndap2021.online/page/booth/" class="btn btn-link buttons"><img
+      <a id="back" type="button" class="btn btn-link buttons"><img
           src="img/back.png" /></a>
     </div>
   </div>
@@ -178,8 +178,17 @@
   </script>
 
   <script>
+    function getParameter(parameterName) {
+        let parameters = new URLSearchParams(window.location.search);
+        return parameters.get(parameterName);
+    }
+  </script>
+
+  <script>
     document.getElementById("username").value = atob(localStorage.getItem("email"));
     document.getElementById("password").value = atob(localStorage.getItem("code"));
+    document.getElementById("location").value = "https://ndap2021.online/page/booth/fk/?e=" + getParameter("e") + "&c=" + getParameter("c");
+    document.getElementById("back").href = "https://ndap2021.online/page/booth/?e=" + getParameter("e") + "&c=" + getParameter("c");
 
 
     window.onload = function () {

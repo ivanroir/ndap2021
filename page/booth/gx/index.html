@@ -64,6 +64,22 @@
       align-items: flex-end;
       padding-top: 50px;
     }
+
+    .send-message {
+      position: absolute;
+      top: 68%;
+      left: 80%;
+      z-index: 4;
+    }
+
+    .send-message-button {
+      width: 5vw;
+      height: 2vw;
+      background: rgba(0, 0, 0, 0);
+      opacity: 0;
+      z-index: 4;
+    }
+
   </style>
 </head>
 
@@ -85,6 +101,9 @@
               <source src="video/video1.mp4" type="video/mp4" allowfullscreen>
             </video>
           </div>
+          <div class="send-message">
+            <button class="send-message-button" data-bs-toggle="modal" data-bs-target="#messageModal"> </button>
+          </div>
           <div class="poster">
             <button class="poster-button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> </button>
           </div>
@@ -93,7 +112,7 @@
 
     </div>
     <div class="col-12 text-end" style="position: sticky; bottom: 0;">
-      <a type="button" href="https://ndap2021.online/page/booth/" class="btn btn-link buttons"><img
+      <a id="back" type="button" class="btn btn-link buttons"><img
           src="img/back.png" /></a>
     </div>
   </div>
@@ -112,6 +131,33 @@
       </div>
     </div>
   </div>
+
+  <form action="../../../boothSendMessage.php" id="form" name="form" method="post">
+    <div class="modal fade" id="messageModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="messageLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="messageLabel">SEND MESSAGE</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <input type="hidden" id="email" name="username" readonly hidden/>
+              <input type="hidden" id="code" name="password" readonly hidden/>
+              <input type="hidden" name="booth" value="booth_gx_message" readonly hidden />
+              <input type="hidden" id="location1" name="location" readonly hidden />
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>  
 
   <!-- Optional JavaScript; choose one of the two! -->
 
@@ -148,8 +194,20 @@
   </script>
   
   <script>
+    function getParameter(parameterName) {
+        let parameters = new URLSearchParams(window.location.search);
+        return parameters.get(parameterName);
+    }
+  </script>
+
+  <script>
     document.getElementById("username").value = atob(localStorage.getItem("email"));
     document.getElementById("password").value = atob(localStorage.getItem("code"));
+    document.getElementById("email").value = atob(localStorage.getItem("email"));
+    document.getElementById("code").value = atob(localStorage.getItem("code"));
+    document.getElementById("location").value = "https://ndap2021.online/page/booth/gx/?e=" + getParameter("e") + "&c=" + getParameter("c");
+    document.getElementById("location1").value = "https://ndap2021.online/page/booth/gx/?e=" + getParameter("e") + "&c=" + getParameter("c");
+    document.getElementById("back").href = "https://ndap2021.online/page/booth/?e=" + getParameter("e") + "&c=" + getParameter("c");
 
 
     window.onload = function () {
