@@ -217,12 +217,26 @@
   }
   </script>
 
+  
+  <script>
+      function getParameter(parameterName) {
+          let parameters = new URLSearchParams(window.location.search);
+          return parameters.get(parameterName);
+      }
+      localStorage.setItem("email", getParameter("e"));
+      localStorage.setItem("code", getParameter("c"));
+      sessionStorage.setItem("email", getParameter("e"));
+      sessionStorage.setItem("code", getParameter("c"));
+  </script>
+
   <script>
       
     if((localStorage.getItem("email") != null && localStorage.getItem("email") != "null" ) && (localStorage.getItem("code") != null && localStorage.getItem("code") != "null")){
       document.getElementById("username").value = atob(localStorage.getItem("email"));
       document.getElementById("password").value = atob(localStorage.getItem("code"));
     }
+
+    
   
 
     function sendBackMessage(){
