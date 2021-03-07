@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
   <head>
-    <meta charset="utf-8">
-    <meta username="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="shortcut icon" href="favicon.ico" type="image/icon">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/icon" />
 
     <title>NDAP ANCON VIRTUAL VENUE</title>
     <style>
       html {
         box-sizing: border-box;
       }
-      *, *:before, *:after {
+      *,
+      *:before,
+      *:after {
         box-sizing: inherit;
       }
       body {
@@ -34,24 +45,24 @@
         z-index: 2;
       }
       .logo {
-          display: block;
-          width: 100%;
-          height: 100%;
+        display: block;
+        width: 100%;
+        height: 100%;
       }
 
       .progress {
-          margin: 1.5em;
-          border: 1px solid #01122a;
-          width: 50vw;
-          display: none;
-          position: absolute;
-          bottom: 50px;
+        margin: 1.5em;
+        border: 1px solid #01122a;
+        width: 50vw;
+        display: none;
+        position: absolute;
+        bottom: 50px;
       }
       .progress .full {
-          margin: 2px;
-          background: #01122a;
-          height: 1em;
-          transform-origin: top left;
+        margin: 2px;
+        background: #01122a;
+        height: 1em;
+        transform-origin: top left;
       }
 
       #loader {
@@ -94,27 +105,60 @@
           transform: rotate(360deg);
         }
       }
-
     </style>
   </head>
 
   <body>
-    <div class="wide-screen1" style="height: 10vh; background-color: #01122a;"></div>
+    <div
+      class="wide-screen1"
+      style="height: 10vh; background-color: #01122a"
+    ></div>
     <div id="gameContainer"></div>
     <div id="loader">
-      <img class="logo" src="logo.png">
+      <img class="logo" src="logo.png" />
       <div class="spinner"></div>
       <div class="progress"><div class="full"></div></div>
     </div>
-    <div class="wide-screen2" style="height: 10vh; background-color: #01122a;"></div>
+    <div
+      class="wide-screen2"
+      style="height: 10vh; background-color: #01122a"
+    ></div>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" data-backdrop="static" data-keyboard="false"  tabindex="-1" style="background-color: rgba(0,0,0,.7);">  
+    <div
+      class="modal fade"
+      id="exampleModal"
+      data-backdrop="static"
+      data-keyboard="false"
+      tabindex="-1"
+      style="background-color: rgba(0, 0, 0, 0.7)"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-body" style="padding: 12px; background-color: white; align-items: center; justify-content: center; display: flex;">
-            <div class="row" style="padding: 50px; background-image: url(img/login/bg.png); background-repeat: no-repeat; background-position: center;"> 
+          <div
+            class="modal-body"
+            style="
+              padding: 12px;
+              background-color: white;
+              align-items: center;
+              justify-content: center;
+              display: flex;
+            "
+          >
+            <div
+              class="row"
+              style="
+                padding: 50px;
+                background-image: url(img/login/bg.png);
+                background-repeat: no-repeat;
+                background-position: center;
+              "
+            >
               <div class="col-12 text-center mb-5 p-0">
-                <img class="img-responsive" src="img/login/NDAPLogo.png" alt="NDAP LOGO"/>
+                <img
+                  class="img-responsive"
+                  src="img/login/NDAPLogo.png"
+                  alt="NDAP LOGO"
+                />
               </div>
               <div class="col-12">
                 <div class="col-12">
@@ -124,10 +168,19 @@
                         <img src="img/login/username.png" alt="USERNAME" />
                       </div>
                       <div class="col-7">
-                        <input type="text" class="form-control" id="username" required>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="username"
+                          required
+                        />
                       </div>
-                      <div class="col-1" style="text-align: start;">
-                        <label id="username_required" style="color: red;  display: none;">*</label>
+                      <div class="col-1" style="text-align: start">
+                        <label
+                          id="username_required"
+                          style="color: red; display: none"
+                          >*</label
+                        >
                       </div>
                     </div>
                   </div>
@@ -139,150 +192,166 @@
                         <img src="img/login/password.png" alt="PASSWORD" />
                       </div>
                       <div class="col-7">
-                        <input type="text" class="form-control" id="password" required>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="password"
+                          required
+                        />
                       </div>
-                      <div class="col-1" style="text-align: start;">
-                        <label id="password_required" style="color: red;  display: none;">*</label>
+                      <div class="col-1" style="text-align: start">
+                        <label
+                          id="password_required"
+                          style="color: red; display: none"
+                          >*</label
+                        >
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-12 text-center">
-                <button type="button" id="submit" onclick="sendBackMessage()" >
-                  <img src="img/login/submit.png" style="width: 100%;" alt="SUBMIT BUTTON" />
+                <button type="button" id="submit" onclick="sendBackMessage()">
+                  <img
+                    src="img/login/submit.png"
+                    style="width: 100%"
+                    alt="SUBMIT BUTTON"
+                  />
                 </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>    
+    </div>
 
-    
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
   </body>
 
   <script src="Build/UnityLoader.js"></script>
 
   <script>
-  var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json", {onProgress: UnityProgress});
+    var gameInstance = UnityLoader.instantiate(
+      "gameContainer",
+      "Build/Build.json",
+      { onProgress: UnityProgress }
+    );
 
-  function CheckData(data) {
-    if(data == "0") {
-      $('#exampleModal').modal('show');
-    }
-    else {
-      sessionStorage.setItem("email", btoa(document.getElementById("username").value));
-      sessionStorage.setItem("code", btoa(document.getElementById("password").value));
-      localStorage.setItem("email", btoa(document.getElementById("username").value));
-      localStorage.setItem("code", btoa(document.getElementById("password").value));
+    function CheckData(data) {
+      if (data == "0") {
+        $("#exampleModal").modal("show");
+      } else {
+        sessionStorage.setItem(
+          "email",
+          btoa(document.getElementById("username").value)
+        );
+        sessionStorage.setItem(
+          "code",
+          btoa(document.getElementById("password").value)
+        );
+        localStorage.setItem(
+          "email",
+          btoa(document.getElementById("username").value)
+        );
+        localStorage.setItem(
+          "code",
+          btoa(document.getElementById("password").value)
+        );
 
-      $('#exampleModal').modal('hide');
-    }
-    console.log(data);
-  }
-
-
-  function UnityProgress(gameInstance, progress) {
-    if (!gameInstance.Module) {
-      return;
-    }
-    const loader = document.querySelector("#loader");
-    const wideScreen1 = document.querySelector(".wide-screen1");
-    const wideScreen2 = document.querySelector(".wide-screen2");
-    const gameContainer = document.querySelector("#gameContainer");
-
-    if (!gameInstance.progress) {
-      const progress = document.querySelector("#loader .progress");
-      progress.style.display = "block";
-      gameInstance.progress = progress.querySelector(".full");
-      loader.querySelector(".spinner").style.display = "none";
-      wideScreen1.style.height="0vh";
-      wideScreen2.style.height="0vh";
-      gameContainer.style.height="100vh";
-
-    }
-    gameInstance.progress.style.transform = `scaleX(${progress})`;
-    if (progress === 1 && !gameInstance.removeTimeout) {
-      gameInstance.removeTimeout = setTimeout(function() {
-          loader.style.display = "none";
-          wideScreen1.style.height="10vh";
-          wideScreen2.style.height="10vh";
-          gameContainer.style.height="80vh";
-      }, 2000);
-    }
-  }
-  </script>
-
-  
-  <script>
-      function getParameter(parameterName) {
-          let parameters = new URLSearchParams(window.location.search);
-          return parameters.get(parameterName);
+        $("#exampleModal").modal("hide");
       }
-      localStorage.setItem("email", getParameter("e"));
-      localStorage.setItem("code", getParameter("c"));
-      sessionStorage.setItem("email", getParameter("e"));
-      sessionStorage.setItem("code", getParameter("c"));
+      console.log(data);
+    }
+
+    function UnityProgress(gameInstance, progress) {
+      if (!gameInstance.Module) {
+        return;
+      }
+      const loader = document.querySelector("#loader");
+      const wideScreen1 = document.querySelector(".wide-screen1");
+      const wideScreen2 = document.querySelector(".wide-screen2");
+      const gameContainer = document.querySelector("#gameContainer");
+
+      if (!gameInstance.progress) {
+        const progress = document.querySelector("#loader .progress");
+        progress.style.display = "block";
+        gameInstance.progress = progress.querySelector(".full");
+        loader.querySelector(".spinner").style.display = "none";
+        wideScreen1.style.height = "0vh";
+        wideScreen2.style.height = "0vh";
+        gameContainer.style.height = "100vh";
+      }
+      gameInstance.progress.style.transform = `scaleX(${progress})`;
+      if (progress === 1 && !gameInstance.removeTimeout) {
+        gameInstance.removeTimeout = setTimeout(function () {
+          loader.style.display = "none";
+          wideScreen1.style.height = "10vh";
+          wideScreen2.style.height = "10vh";
+          gameContainer.style.height = "80vh";
+        }, 2000);
+      }
+    }
   </script>
 
   <script>
-      
-    if((localStorage.getItem("email") != null && localStorage.getItem("email") != "null" ) && (localStorage.getItem("code") != null && localStorage.getItem("code") != "null")){
-      document.getElementById("username").value = atob(localStorage.getItem("email"));
-      document.getElementById("password").value = atob(localStorage.getItem("code"));
+    function getParameter(parameterName) {
+      let parameters = new URLSearchParams(window.location.search);
+      return parameters.get(parameterName);
+    }
+    localStorage.setItem("email", getParameter("e"));
+    localStorage.setItem("code", getParameter("c"));
+    sessionStorage.setItem("email", getParameter("e"));
+    sessionStorage.setItem("code", getParameter("c"));
+  </script>
+
+  <script>
+    if (
+      localStorage.getItem("email") != null &&
+      localStorage.getItem("email") != "null" &&
+      localStorage.getItem("code") != null &&
+      localStorage.getItem("code") != "null"
+    ) {
+      document.getElementById("username").value = atob(
+        localStorage.getItem("email")
+      );
+      document.getElementById("password").value = atob(
+        localStorage.getItem("code")
+      );
     }
 
-    
-  
-
-    function sendBackMessage(){
-      var user_name = true, pword = true;
+    function sendBackMessage() {
+      var user_name = true,
+        pword = true;
       var username = document.getElementById("username").value;
       var password = document.getElementById("password").value;
-      
 
-      if (!document.getElementById('username').validity.valid){
-        document.getElementById('username_required').style.display = "inline";
+      if (!document.getElementById("username").validity.valid) {
+        document.getElementById("username_required").style.display = "inline";
         user_name = false;
-      }
-      else {
-        document.getElementById('username_required').style.display = "none";
+      } else {
+        document.getElementById("username_required").style.display = "none";
         user_name = true;
       }
-      
-      if (!document.getElementById('password').validity.valid){
-        document.getElementById('password_required').style.display = "inline";
+
+      if (!document.getElementById("password").validity.valid) {
+        document.getElementById("password_required").style.display = "inline";
         pword = false;
-      }
-      else {
-        document.getElementById('password_required').style.display = "none";
+      } else {
+        document.getElementById("password_required").style.display = "none";
         pword = true;
       }
 
       if (user_name && pword) {
         var data = username + "\t" + password;
-        gameInstance.SendMessage("Main Menu", "SendToUnity", data );
+        gameInstance.SendMessage("Main Menu", "SendToUnity", data);
 
-        ///////// IF LOGIN FAILED DONT CLOSE 
-        
+        ///////// IF LOGIN FAILED DONT CLOSE
       }
     }
-
   </script>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-
+  
 </html>
-
