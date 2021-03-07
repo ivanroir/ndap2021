@@ -126,7 +126,7 @@
     <!-- Modal -->
     <div
       class="modal fade"
-      id="exampleModal"
+      id="exampleModals"
       data-backdrop="static"
       data-keyboard="false"
       tabindex="-1"
@@ -241,7 +241,7 @@
       { onProgress: UnityProgress }
     );
 
-    function CheckData(data) {
+    /*function CheckData(data) {
       if (data == "0") {
         $("#exampleModal").modal("show");
       } else {
@@ -265,7 +265,7 @@
         $("#exampleModal").modal("hide");
       }
       console.log(data);
-    }
+    }*/
 
     function UnityProgress(gameInstance, progress) {
       if (!gameInstance.Module) {
@@ -294,6 +294,14 @@
           gameContainer.style.height = "80vh";
         }, 2000);
       }
+
+      if (getParameter("e") == null || getParameter("c") == null) {
+        var data = "" + "\t" + "";
+      }
+      else {
+        var data = atob(getParameter("e")) + "\t" + atob(getParameter("c"));
+      }
+      gameInstance.SendMessage("First Time", "SendToUnity", data);
     }
   </script>
 
@@ -309,7 +317,7 @@
   </script>
 
   <script>
-    if (
+    /*if (
       localStorage.getItem("email") != null &&
       localStorage.getItem("email") != "null" &&
       localStorage.getItem("code") != null &&
@@ -321,11 +329,10 @@
       document.getElementById("password").value = atob(
         localStorage.getItem("code")
       );
-    }
+    }*/
 
-    function sendBackMessage() {
-      var user_name = true,
-        pword = true;
+    /*function sendBackMessage() {
+      var user_name = true, pword = true;
       var username = document.getElementById("username").value;
       var password = document.getElementById("password").value;
 
@@ -350,8 +357,9 @@
         gameInstance.SendMessage("Main Menu", "SendToUnity", data);
 
         ///////// IF LOGIN FAILED DONT CLOSE
-      }
-    }
+      }  
+      
+    }*/
   </script>
   
 </html>
