@@ -171,7 +171,7 @@
   var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json", {onProgress: UnityProgress});
 
   function CheckData(data) {
-    if(data == "Wrong username/password") {
+    if(data == "0") {
       $('#exampleModal').modal('show');
     }
     else {
